@@ -219,10 +219,6 @@ header nav ul li {
   text-align: center;
 }
 
-.timeline {
-  list-style: none;
-}
-
 /* Contact Section */
 .contact {
   padding: 50px 0;
@@ -251,6 +247,100 @@ footer {
   text-align: center;
   padding: 20px 0;
 }
+/* Container reset */
+.timeline {
+  position: relative;
+  margin: 50px 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Vertical line down the middle */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #6a90bd;
+}
+
+/* Each item */
+.timeline li {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+/* Dots */
+.timeline li::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: #6a90bd;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Left side items */
+.timeline li:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline li:nth-child(odd)::before {
+  right: -8px;
+}
+
+/* Right side items */
+.timeline li:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline li:nth-child(even)::before {
+  left: -8px;
+}
+
+/* Optional: styling for text */
+.timeline li strong {
+  display: block;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timeline li {
+  color: #555;
+}
+
+/* Responsive: single column on small screens */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline li {
+    width: 100%;
+    padding-left: 40px;
+    text-align: left;
+  }
+
+  .timeline li:nth-child(odd),
+  .timeline li:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline li::before {
+    left: 12px;
+  }
+}
+
 </style>
 <script>
 document.getElementById('contact-form').addEventListener('submit', function (e) {
