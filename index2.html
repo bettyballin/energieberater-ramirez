@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Energy Consulting Freelancer</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header Section -->
@@ -16,8 +17,8 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="index.html">Design Option 1</a></li>
-          <li><a href="index3.html">Design Option 3</a></li>
+          <li><a href="index.html">Design 1</a></li>
+          <li><a href="index3.html">Design 3</a></li>
         </ul>
       </nav>
     </div>
@@ -142,6 +143,9 @@ header {
   background: #fff;
   padding: 20px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header h1 {
@@ -154,11 +158,11 @@ header nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 header nav ul li {
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 /* Hero Section */
@@ -299,7 +303,6 @@ footer {
 
 /* Right side items */
 .timeline li:nth-child(even) {
-  left: 50%;
   text-align: left;
 }
 
@@ -327,13 +330,13 @@ footer {
 
   .timeline li {
     width: 100%;
-    padding-left: 40px;
     text-align: left;
+    font-size: 14px;
+    word-break: break-word;
   }
 
-  .timeline li:nth-child(odd),
   .timeline li:nth-child(even) {
-    left: 0;
+    left: 22px;
   }
 
   .timeline li::before {
@@ -349,5 +352,4 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   this.reset();
 });
 </script>
-
 </html>
