@@ -1,91 +1,181 @@
+/* Updated Color Palette */
+:root {
+  --primary-color: #2A5C8B; /* Trustworthy blue */
+  --secondary-color: #6A994E; /* Sustainability green */
+  --accent-color: #FFA040; /* Warm orange for CTAs */
+  --neutral-light: #F5F5F5; /* Light gray for backgrounds */
+  --neutral-dark: #333333; /* Dark gray for text */
+  --white: #FFFFFF;
+}
+
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--neutral-light);
+  color: var(--neutral-dark);
 }
 
+/* Header */
 header {
-    /* background-image: url('background.jpg');
-    background-size: cover; */
-    background-color: #6a90bd;
-    color: #fff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
 }
 
-h1 {    
-    margin: 0;
-    /* padding: 0.1px; */
+.logo {
+  height: 64px;
+  width: auto;
+  margin-left: 2rem;
+  border-radius: 8px;
 }
-nav ul {
-    padding: 0;
-    list-style: none;
+.hero-logo {
+  height:150px;
 }
-
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
+.gih {
+  height:150px;
 }
-nav li::before {
-    content: '';
-}
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex-grow: 1;
 }
 
+.header-content h1 {
+  margin: 0;
+  color: var(--white);
+}
+
+.header-content nav {
+  text-align: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.header-content ul {
+  white-space: nowrap;
+  width: max-content;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.header-content li {
+  display: inline;
+}
+
+.header-content a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+}
+
+.header-content a:hover,
+.header-content a:focus {
+  background-color: var(--accent-color);
+  color: var(--neutral-dark);
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .logo {
+    margin-left: 0;
+    height: 48px;
+  }
+}
+
+/* Main Content */
 main {
-    padding: 2rem;
-    text-align: center;
+  padding: 2rem;
+  text-align: center;
 }
 
 #hero {
-    padding: 2rem;
-    margin-bottom: 2rem;
+  background-color: var(--white);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: none; /* Removed burlywood border */
 }
 
-#hero img {
-    width: 200px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
+#hero h2 {
+  color: var(--primary-color);
 }
 
-#ueber-mich, #leistungen, #kontakt {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+#hero p {
+  color: var(--neutral-dark);
 }
 
-#ueber-mich img {
-    width: 150px;
+#ueber-mich, #leistungen, #berufserfahrung, #weiterbildungen, #kenntnisse, #kontakt {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
+#ueber-mich h2, #leistungen h2, #berufserfahrung h2, #weiterbildungen h2, #kenntnisse h2, #kontakt h2 {
+  color: var(--primary-color);
+}
+
+#leistungen ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+#leistungen li {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* Buttons (if added later) */
+.button {
+  background-color: var(--accent-color);
+  color: var(--neutral-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #FF8800; /* Darker shade for hover */
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 0;
 }
 
-/* Accent Color */
-a:hover,
-a:focus {
-    color: #6a90bd;
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
 }
 
-#hero {
-    border: 5px solid #6a90bd;
-}
-
-#berufserfahrung, #weiterbildungen, #kenntnisse {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
+footer a:hover {
+  text-decoration: underline;
 }

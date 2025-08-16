@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ramirez – Bandera de España</title>
+
+  <!-- Google Font: "My Soul" by Robert Leuschke -->
+  <link href="https://fonts.googleapis.com/css2?family=My+Soul&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --rojo:  #AA151B;
+      --amarillo: #F1BF00;
+    }
+    html, body {
+      margin: 0;
+      background: #f4f4f4;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .wrap {
+      max-width: 1600px;
+      margin: 24px auto;
+      padding: 12px;
+    }
+    .controls {
+      margin: 8px 0 16px;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover { background: #fafafa; }
+    .note { color: #666; font-size: 14px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="controls">
+      <button id="dl">Download PNG</button>
+      <div class="note">Tip: You can also right-click the image and “Save image as…” (SVG).</div>
+    </div>
+
+    <!-- SVG canvas -->
+    <svg id="flag" xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000" role="img" aria-label="Bandera de España con texto">
+      <!-- Background stripes -->
+      <rect x="0" y="0"   width="1500" height="1000" fill="var(--rojo)" />
+      <rect x="0" y="0"   width="1500" height="250"  fill="var(--amarillo)" />
+      <rect x="0" y="750" width="1500" height="250"  fill="var(--amarillo)" />
+
+      <!-- Main name: "Ramirez" -->
+      <text id="nameText" x="36%" y="50%" text-anchor="middle"
+        font-family="'My Soul', cursive"
+        font-size="220"
+        font-weight="500"
+        stroke="#000" stroke-width="4"
+        paint-order="stroke fill"
+        dominant-baseline="central"
+        fill="#1a1a1a">
+    Ramirez
+    </text>
+
+  <polygon points="940,350 1050,350 1080,370 1050,390 940,390" fill="var(--amarillo)"></polygon>
+  <text x="960" y="377" text-anchor="start" font-size="24" dominant-baseline="middle" fill="var(--amarillo)">A</text>
+
+  <polygon points="940,400 1090,400 1120,420 1090,440 940,440" fill="var(--amarillo)"></polygon>
+  <text x="960" y="427" text-anchor="start" dominant-baseline="middle" fill="var(--amarillo)">B</text>
+
+  <polygon points="940,450 1140,450 1170,470 1140,490 940,490" fill="var(--amarillo)"></polygon>
+  <text x="960" y="477" text-anchor="start" dominant-baseline="middle" fill="var(--amarillo)">C</text>
+
+  <polygon points="940,500 1190,500 1220,520 1190,540 940,540" fill="var(--amarillo)"></polygon>
+  <text x="960" y="527" text-anchor="start" dominant-baseline="middle" fill="var(--amarillo)">D</text>
+
+  <polygon points="940,550 1240,550 1270,570 1240,590 940,590" fill="var(--amarillo)"></polygon>
+  <text x="960" y="577" text-anchor="start" dominant-baseline="middle" fill="var(--amarillo)">E</text>
+
+
+
+      <!-- Subtitle -->
+      <text x="50%" y="50%" dy="200"
+            text-anchor="middle"
+            font-family="'Tinos', serif"
+            font-size="54"
+            letter-spacing="2"
+            font-weight="700"
+            fill="#1a1a1a">
+        EXPERTO EN EFICIENCIA ENERGÉTICA
+      </text>
+    </svg>
+  </div>
+
+  <script>
+    document.getElementById('dl').addEventListener('click', function () {
+      const svg = document.getElementById('flag');
+      const xml = new XMLSerializer().serializeToString(svg);
+
+      const svgBlob = new Blob([xml], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(svgBlob);
+
+      const img = new Image();
+      img.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = svg.viewBox.baseVal.width || svg.width.baseVal.value;
+        canvas.height = svg.viewBox.baseVal.height || svg.height.baseVal.value;
+
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        URL.revokeObjectURL(url);
+
+        canvas.toBlob(function (blob) {
+          const a = document.createElement('a');
+          a.download = 'ramirez-bandera.png';
+          a.href = URL.createObjectURL(blob);
+          a.click();
+          URL.revokeObjectURL(a.href);
+        }, 'image/png');
+      };
+      img.src = url;
+    });
+  </script>
+</body>
+</html>
