@@ -1,3 +1,62 @@
+// Form validation for contact form (simple version)
+function validateForm() {
+  let isValid = true;
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const messageInput = document.getElementById('message');
+  
+  // Clear previous error messages
+  document.getElementById('nameError').textContent = '';
+  document.getElementById('nameError').style.display = 'none';
+  document.getElementById('emailError').textContent = '';
+  document.getElementById('emailError').style.display = 'none';
+  document.getElementById('messageError').textContent = '';
+  document.getElementById('messageError').style.display = 'none';
+  
+  // Validate name
+  if (nameInput.value.length < 2) {
+    const lang = getLangFromURL();
+    document.getElementById('nameError').textContent = translations[lang].nameError;
+    document.getElementById('nameError').style.display = 'block';
+    isValid = false;
+  }
+  
+  // Validate email
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailPattern.test(emailInput.value)) {
+    const lang = getLangFromURL();
+    document.getElementById('emailError').textContent = translations[lang].emailError;
+    document.getElementById('emailError').style.display = 'block';
+    isValid = false;
+  }
+  
+  // Validate message
+  if (messageInput.value.length < 10) {
+    const lang = getLangFromURL();
+    document.getElementById('messageError').textContent = translations[lang].messageError;
+    document.getElementById('messageError').style.display = 'block';
+    isValid = false;
+  }
+  
+  return isValid;
+}
+/**
+ * Shows the loading icon (e.g., during async operations).
+ */
+function startLoading() {
+  const loadingIcon = document.getElementById('loadingIcon');
+  loadingIcon.style.display = 'inline-block'; // Show the loading icon
+}
+
+/**
+ * Hides the loading icon.
+ */
+function stopLoading() {
+  const loadingIcon = document.getElementById('loadingIcon');
+  loadingIcon.style.display = 'none';
+}
+
+
 /**
  * Section toggling and smooth scrolling
  * - On load: show only hero section, hide all others.
@@ -105,4 +164,119 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // On load, show Startseite
     updateIntroBanner('hero');
+      
+    // EmailJS integration for contact form
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('status');
+    let emailTimeout;
+
+    // Check if EmailJS is properly loaded
+    function isEmailJSLoaded() {
+        return typeof emailjs !== 'undefined' && emailjs.hasOwnProperty('init');
+    }
+
+    // Validate contact form fields (stricter than validateForm)
+    function validateContactForm() {
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        let isValid = true;
+
+        // Validate name (at least 2 characters)
+        if (!nameInput.value || nameInput.value.trim().length < 2) {
+        isValid = false;
+        nameInput.classList.add('invalid-input');
+        } else {
+        nameInput.classList.remove('invalid-input');
+        }
+
+        // Validate email (using a simple regex pattern)
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailInput.value || !emailPattern.test(emailInput.value)) {
+        isValid = false;
+        emailInput.classList.add('invalid-input');
+        } else {
+        emailInput.classList.remove('invalid-input');
+        }
+
+        // Validate message (at least 10 characters)
+        if (!messageInput.value || messageInput.value.trim().length < 10) {
+        isValid = false;
+        messageInput.classList.add('invalid-input');
+        } else {
+        messageInput.classList.remove('invalid-input');
+        }
+
+        return isValid;
+    }
+
+    // Add an event listener for form submission
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        
+        // Clear any previous status
+        statusDiv.textContent = '';
+        statusDiv.className = '';
+        
+        // Validate form
+        if (!validateContactForm()) {
+        statusDiv.textContent = 'Please fill out all fields correctly.';
+        statusDiv.className = 'error-message';
+        return;
+        }
+        
+        // Check if EmailJS is loaded
+        if (!isEmailJSLoaded()) {
+        statusDiv.textContent = 'Email service not available. Please try again later or contact directly via email.';
+        statusDiv.className = 'error-message';
+        return;
+        }
+        
+        // Show loading icon with a small delay to ensure it renders properly
+        setTimeout(() => {
+        startLoading();
+        }, 10);
+        
+        // Set a timeout to hide the loading icon if the email sending takes too long
+        emailTimeout = setTimeout(() => {
+        statusDiv.textContent = 'Request is taking longer than expected. Please wait...';
+        // Keep the loading icon visible
+        }, 5000);
+        
+        // Disable form inputs during submission
+        const formInputs = form.querySelectorAll('input, textarea, button');
+        formInputs.forEach(input => input.disabled = true);
+        
+        // Get form data
+        const formData = {
+        from_name: document.getElementById('name').value,
+        from_mail: document.getElementById('email').value,
+        message: document.getElementById('message').value
+        };
+        
+        // Log form data for debugging
+        console.log("Sending email with data:", formData);
+        
+        // Use emailjs.send instead of sendForm to explicitly pass the form data
+        emailjs.send("service_", "template_", formData)
+        .then(() => {
+            clearTimeout(emailTimeout);
+            statusDiv.textContent = 'Message sent successfully!';
+            statusDiv.className = 'success-message';
+            form.reset(); // Clear the form fields
+            stopLoading();
+            
+            // Re-enable form inputs
+            formInputs.forEach(input => input.disabled = false);
+        }, (error) => {
+            clearTimeout(emailTimeout);
+            console.error("EmailJS Error:", error);
+            statusDiv.textContent = 'Error sending message. Please try again or contact directly via email.';
+            statusDiv.className = 'error-message';
+            stopLoading();
+            
+            // Re-enable form inputs
+            formInputs.forEach(input => input.disabled = false);
+        });
+    });
 });
