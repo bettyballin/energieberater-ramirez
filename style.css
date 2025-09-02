@@ -414,6 +414,26 @@ main {
   flex-direction: column;
   justify-content: space-between;
   min-height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Large, semi-transparent profile image as background */
+.expert-photo-bg {
+  position: absolute;
+  width: 700px;
+  height: 500px;
+  transform: translate(-10%, -10%);
+  background: url('ramirez.jpg') center center/cover no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+  /* filter: blur(0.5px); */
+}
+
+.expert-profile-card > *:not(.expert-photo-bg) {
+  position: relative;
+  z-index: 1;
 }
 
 .expert-header {
@@ -424,12 +444,16 @@ main {
 }
 
 .expert-photo {
-  width: 100px;
-  height: 100px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 0;
-  border: 3px solid var(--accent-color);
+  border-radius: 50%;
+  border: 4px solid var(--accent-color);
   background: var(--white);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  z-index: 2;
 }
 
 .expert-info h3 {

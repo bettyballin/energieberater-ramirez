@@ -1,5 +1,0 @@
-Vor Ort Energieberatung
-Erstellung eines individuellen Snierungsfahrplans (ISFP). Die ISFP hilft Ihnen, Ihr Gebäude effizienter zu gestalten und dabei von zusätzlichen Fördermitteln zu profitieren.
-Maßnahmen nach Bundesförderung für effiziente Gebäude (BEG) nach Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) oder Kreditanstalt für Wiederaufbau (KFW) oder für ein Effizienzhaus als Zuschuss- oder Kreditversierte
-Berechnung zum hydraulischen Abgleich
-Zweidimensionale Wärmebrückenberechnungen zur Ermittlung des FRSI-Wertes (Temperaturfaktor)
