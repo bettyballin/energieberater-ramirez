@@ -9,11 +9,26 @@
     <header>
         <h1>Datenschutzerklärung</h1>
     </header>
-        <div class="intro-banner">
-          <div class="intro-title">Datenschutz</div>
-          <div class="intro-desc">Informationen zum Umgang mit Ihren personenbezogenen Daten auf dieser Website.</div>
-        </div>
-        <main>
+            <main data-title="Datenschutz" data-desc="Informationen zum Umgang mit Ihren personenbezogenen Daten auf dieser Website.">
+            <div class="intro-banner">
+              <div class="intro-title"></div>
+              <div class="intro-desc"></div>
+            </div>
+            <script>
+              // Set intro banner from main[data-title][data-desc]
+              document.addEventListener('DOMContentLoaded', function () {
+                var main = document.querySelector('main[data-title][data-desc]');
+                if (main) {
+                  var banner = main.querySelector('.intro-banner');
+                  if (banner) {
+                    var title = banner.querySelector('.intro-title');
+                    var desc = banner.querySelector('.intro-desc');
+                    if (title) title.textContent = main.getAttribute('data-title');
+                    if (desc) desc.textContent = main.getAttribute('data-desc');
+                  }
+                }
+              });
+            </script>
         <section>
             <h2>1. Datenschutz auf einen Blick</h2>
             <p>

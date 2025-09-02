@@ -6,11 +6,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sectionIds = ['ueber-mich', 'leistungen', 'weiterbildungen', 'kontakt'];
     const sections = sectionIds.map(id => document.getElementById(id));
-    const hero = document.getElementById('hero');
-
-    // On load: show only hero, hide all other sections
     sections.forEach(section => section.classList.add('hidden-section'));
-    if (hero) hero.classList.remove('hidden-section');
 
     // Add click event to nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -18,8 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetId = this.getAttribute('href').replace('#', '');
             if (sectionIds.includes(targetId)) {
                 e.preventDefault();
-                // Hide hero, hide all sections, show only the clicked section
-                if (hero) hero.classList.add('hidden-section');
+                // Hide all sections, show only the clicked section
                 sections.forEach(section => {
                     if (section.id === targetId) section.classList.remove('hidden-section');
                     else section.classList.add('hidden-section');
@@ -39,10 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Section info map for fallback
     const sectionInfo = {
-        'hero': {
-            title: 'Startseite',
-            desc: 'Willkommen auf der Startseite. Hier finden Sie alle Informationen rund um meine Energieberatungsleistungen.'
-        },
         'ueber-mich': {
             title: document.getElementById('ueber-mich')?.dataset.title || 'Über Mich',
             desc: document.getElementById('ueber-mich')?.dataset.desc || ''
@@ -63,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateIntroBanner(sectionId) {
         if (!introBanner || !introTitle || !introDesc) return;
-        const info = sectionInfo[sectionId] || sectionInfo['hero'];
+        const info = sectionInfo[sectionId];
         introTitle.textContent = info.title;
         introDesc.textContent = info.desc;
     }
