@@ -351,159 +351,375 @@ main {
   overflow: visible;
 }
 
-/* Modern Über Mich Section */
-.ueber-mich-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  align-items: flex-start;
-  margin-top: 2rem;
-}
-.ueber-mich-profile-card {
-  background: linear-gradient(135deg, var(--primary-color) 70%, var(--secondary-color) 100%);
+/* Professional Cubic Über Mich Section - Footer Colors */
+#ueber-mich {
+  background: var(--primary-color);
   color: var(--white);
-  border-radius: 18px;
-  box-shadow: 0 6px 32px rgba(42,92,139,0.13);
-  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
-  min-width: 260px;
-  max-width: 320px;
-  flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(42,92,139,0.25);
   position: relative;
-  z-index: 1;
-}
-.ueber-mich-photo {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--white);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-  margin-bottom: 1.1rem;
-  background: var(--white);
-}
-.ueber-mich-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
-}
-.ueber-mich-title {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-top: 1.1rem;
-  opacity: 0.92;
-  letter-spacing: 0.2px;
-}
-.ueber-mich-badges {
-  display: flex;
-  gap: 0.7rem;
-  margin-top: 0.5rem;
-  align-items: center;
-  justify-content: center;
-}
-.ueber-mich-profile-card .gih,
-.ueber-mich-profile-card .dena-img {
-  height: 38px;
-  width: auto;
-  border-radius: 6px;
-  background: var(--white);
-  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-  padding: 2px 4px;
-}
-.ueber-mich-details {
-  flex: 3 1 340px;
-  min-width: 260px;
-  max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  gap: 2.2rem;
-}
-.ueber-mich-timeline {
-  background: linear-gradient(90deg, var(--neutral-light) 80%, #eaf6ff 100%);
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(42,92,139,0.06);
-  padding: 1.2rem 1.5rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  position: relative;
-}
-.timeline-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.2rem;
-  font-size: 1.08rem;
-  padding: 0.3rem 0;
-  border-left: 3px solid var(--primary-color);
-  padding-left: 1.1rem;
-  position: relative;
-}
-.timeline-item::before {
-  content: '';
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: var(--accent-color);
-  border-radius: 50%;
-  position: absolute;
-  left: -19px;
-  top: 7px;
-  box-shadow: 0 1px 4px rgba(255,160,64,0.13);
-}
-.timeline-date {
-  font-weight: 600;
-  color: var(--primary-color);
-  min-width: 80px;
-  letter-spacing: 0.2px;
-}
-.timeline-desc {
-  color: var(--neutral-dark);
-  font-weight: 400;
-  opacity: 0.98;
-}
-.kenntnisse-card {
-  background: linear-gradient(90deg, var(--secondary-color) 10%, #eaf6ff 100%);
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(106,153,78,0.08);
-  padding: 1.2rem 1.5rem;
-}
-.kenntnisse-card h3 {
-  color: var(--primary-color);
-  margin-top: 0;
-  margin-bottom: 0.7rem;
-  font-size: 1.18rem;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-}
-.kenntnisse-list {
-  list-style: disc inside;
-  color: var(--neutral-dark);
-  font-size: 1.05rem;
-  margin: 0;
-  padding-left: 1.2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 2.2rem;
-}
-.kenntnisse-list li {
-  flex: 1 1 220px;
-  margin-bottom: 0.2rem;
-  font-weight: 400;
-  opacity: 0.97;
+  overflow: hidden;
+  margin-bottom: 2rem;
 }
 
-@media (max-width: 900px) {
-  .ueber-mich-grid {
-    flex-direction: column;
-    gap: 1.5rem;
+.professional-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1e4a6b 100%);
+  position: relative;
+}
+
+.professional-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-color);
+}
+
+.professional-header h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--white);
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.5px;
+}
+
+.professional-subtitle {
+  font-size: 1.3rem;
+  color: var(--white);
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.professional-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  background: var(--white);
+  color: var(--neutral-dark);
+}
+
+/* Expert Profile Card */
+.expert-profile-card {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+}
+
+.expert-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.expert-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0;
+  border: 3px solid var(--accent-color);
+  background: var(--white);
+}
+
+.expert-info h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  color: var(--white);
+}
+
+.expert-info p {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.certification-badges {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.cert-badge {
+  height: 35px;
+  width: auto;
+  background: var(--white);
+  padding: 3px 5px;
+  border-radius: 0;
+}
+
+.expert-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.highlight-item {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.highlight-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  margin-bottom: 0.3rem;
+}
+
+.highlight-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Services Overview */
+.services-overview {
+  background: var(--white);
+  padding: 2.5rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.services-overview h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.service-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.service-block {
+  background: var(--neutral-light);
+  padding: 1.5rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-block:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(42,92,139,0.15);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.service-block h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 0.8rem 0;
+}
+
+.service-block p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--neutral-dark);
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Qualifications Card */
+.qualifications-card {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 2.5rem;
+  border-top: 3px solid var(--accent-color);
+}
+
+.qualifications-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.qualification-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.qual-item {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.qual-item strong {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Technical Expertise */
+.technical-expertise {
+  background: var(--white);
+  padding: 2.5rem;
+  border-left: 3px solid var(--accent-color);
+  border-top: 3px solid var(--accent-color);
+}
+
+.technical-expertise h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.tech-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.tech-category h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.tech-category ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tech-category li {
+  background: var(--neutral-light);
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid var(--accent-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-category li:hover {
+  background: rgba(42,92,139,0.05);
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .professional-grid {
+    grid-template-columns: 1fr;
   }
-  .ueber-mich-details {
-    max-width: 100%;
+  
+  .service-blocks,
+  .qualification-grid,
+  .tech-categories {
+    grid-template-columns: 1fr;
+  }
+  
+  .expert-highlights {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .professional-header {
+    padding: 2rem 1rem 1.5rem;
+  }
+  
+  .professional-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .professional-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .expert-profile-card,
+  .services-overview,
+  .qualifications-card,
+  .technical-expertise {
+    padding: 2rem 1.5rem;
+  }
+  
+  .expert-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .expert-highlights {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .service-blocks {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .professional-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .professional-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .professional-subtitle {
+    font-size: 1rem;
+  }
+  
+  .expert-profile-card,
+  .services-overview,
+  .qualifications-card,
+  .technical-expertise {
+    padding: 1.5rem 1rem;
+  }
+  
+  .expert-photo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .expert-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .highlight-number {
+    font-size: 1.5rem;
+  }
+  
+  .highlight-text {
+    font-size: 0.8rem;
   }
 }
 
