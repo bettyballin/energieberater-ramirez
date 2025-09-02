@@ -22,15 +22,47 @@ body {
 
 /* Header */
 header {
-  background-color: var(--primary-color);
-  color: var(--white);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--primary-color);
   padding: 1rem 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px rgba(42,92,139,0.10);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid rgba(42,92,139,0.10);
+}
+
+.intro-banner {
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--primary-color);
+  box-shadow: 0 2px 12px rgba(42,92,139,0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid rgba(42,92,139,0.10);
+  margin: 0;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  text-align: center;
+}
+
+.intro-banner .intro-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.intro-banner .intro-desc {
+  font-size: 1.25rem;
+  color: #333;
+  opacity: 0.85;
+  font-weight: 400;
+  max-width: 700px;
+  margin: 0 auto;
 }
 .header-inner {
   max-width: 1200px;
@@ -51,12 +83,21 @@ header {
 .hero-logo {
   height:150px;
 }
+/* General .dena-img style for other uses */
 .dena-img {
-  display: block;
-  margin: 24px auto 0 auto;
   max-width: 220px;
   width: 100%;
   height: auto;
+}
+
+/* Ensure badges are side by side in ueber-mich-badges */
+.ueber-mich-badges .dena-img {
+  display: inline-block;
+  margin: 0;
+  max-width: 200px;
+  width: auto;
+  height: 45px;
+  vertical-align: middle;
 }
 .gih {
   height:150px;
@@ -93,14 +134,14 @@ header {
   vertical-align: middle;
 }
 .header-content li:not(:first-child) {
-  border-left: 2px solid #fff;
+  border-left: 2px solid var(--primary-color);
   margin-left: 0.5rem;
 }
 
 .header-content a {
   display: inline-block;
   text-decoration: none;
-  color: var(--white);
+  color: var(--primary-color);
   font-weight: bold;
   padding: 1rem 2rem;
   font-size: 1.2rem;
@@ -111,8 +152,8 @@ header {
 
 .header-content a:hover,
 .header-content a:focus {
-  background-color: var(--accent-color);
-  color: var(--neutral-dark);
+  background-color: var(--primary-color);
+  color: var(--white);
   border-radius: 8px;
 }
 
@@ -261,9 +302,167 @@ main {
   margin-bottom: 2rem;
   padding: 1.5rem;
   background-color: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(42,92,139,0.08);
   text-align: left;
+  position: relative;
+  overflow: visible;
+}
+
+/* Modern Über Mich Section */
+.ueber-mich-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+.ueber-mich-profile-card {
+  background: linear-gradient(135deg, var(--primary-color) 70%, var(--secondary-color) 100%);
+  color: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(42,92,139,0.13);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  min-width: 260px;
+  max-width: 320px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.ueber-mich-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--white);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  margin-bottom: 1.1rem;
+  background: var(--white);
+}
+.ueber-mich-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+.ueber-mich-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 1.1rem;
+  opacity: 0.92;
+  letter-spacing: 0.2px;
+}
+.ueber-mich-badges {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.ueber-mich-profile-card .gih,
+.ueber-mich-profile-card .dena-img {
+  height: 38px;
+  width: auto;
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  padding: 2px 4px;
+}
+.ueber-mich-details {
+  flex: 3 1 340px;
+  min-width: 260px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+.ueber-mich-timeline {
+  background: linear-gradient(90deg, var(--neutral-light) 80%, #eaf6ff 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(42,92,139,0.06);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  position: relative;
+}
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  font-size: 1.08rem;
+  padding: 0.3rem 0;
+  border-left: 3px solid var(--primary-color);
+  padding-left: 1.1rem;
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  position: absolute;
+  left: -19px;
+  top: 7px;
+  box-shadow: 0 1px 4px rgba(255,160,64,0.13);
+}
+.timeline-date {
+  font-weight: 600;
+  color: var(--primary-color);
+  min-width: 80px;
+  letter-spacing: 0.2px;
+}
+.timeline-desc {
+  color: var(--neutral-dark);
+  font-weight: 400;
+  opacity: 0.98;
+}
+.kenntnisse-card {
+  background: linear-gradient(90deg, var(--secondary-color) 10%, #eaf6ff 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(106,153,78,0.08);
+  padding: 1.2rem 1.5rem;
+}
+.kenntnisse-card h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.kenntnisse-list {
+  list-style: disc inside;
+  color: var(--neutral-dark);
+  font-size: 1.05rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2.2rem;
+}
+.kenntnisse-list li {
+  flex: 1 1 220px;
+  margin-bottom: 0.2rem;
+  font-weight: 400;
+  opacity: 0.97;
+}
+
+@media (max-width: 900px) {
+  .ueber-mich-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .ueber-mich-details {
+    max-width: 100%;
+  }
 }
 
 #ueber-mich h2, #leistungen h2, #berufserfahrung h2, #weiterbildungen h2, #kenntnisse h2, #kontakt h2 {

@@ -31,4 +31,53 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // --- Intro Banner Dynamic Update ---
+    const introBanner = document.querySelector('.intro-banner');
+    const introTitle = introBanner ? introBanner.querySelector('.intro-title') : null;
+    const introDesc = introBanner ? introBanner.querySelector('.intro-desc') : null;
+
+    // Section info map for fallback
+    const sectionInfo = {
+        'hero': {
+            title: 'Startseite',
+            desc: 'Willkommen auf der Startseite. Hier finden Sie alle Informationen rund um meine Energieberatungsleistungen.'
+        },
+        'ueber-mich': {
+            title: document.getElementById('ueber-mich')?.dataset.title || 'Über Mich',
+            desc: document.getElementById('ueber-mich')?.dataset.desc || ''
+        },
+        'leistungen': {
+            title: document.getElementById('leistungen')?.dataset.title || 'Leistungen',
+            desc: document.getElementById('leistungen')?.dataset.desc || ''
+        },
+        'weiterbildungen': {
+            title: document.getElementById('weiterbildungen')?.dataset.title || 'Weiterbildungen',
+            desc: document.getElementById('weiterbildungen')?.dataset.desc || ''
+        },
+        'kontakt': {
+            title: document.getElementById('kontakt')?.dataset.title || 'Kontakt',
+            desc: document.getElementById('kontakt')?.dataset.desc || ''
+        }
+    };
+
+    function updateIntroBanner(sectionId) {
+        if (!introBanner || !introTitle || !introDesc) return;
+        const info = sectionInfo[sectionId] || sectionInfo['hero'];
+        introTitle.textContent = info.title;
+        introDesc.textContent = info.desc;
+    }
+
+    // On nav click, update banner
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href').replace('#', '');
+            if (sectionIds.includes(targetId)) {
+                updateIntroBanner(targetId);
+            }
+        });
+    });
+
+    // On load, show Startseite
+    updateIntroBanner('hero');
 });
