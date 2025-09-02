@@ -1,4 +1,7 @@
 /* Updated Color Palette */
+.hidden-section {
+  display: none !important;
+}
 :root {
   --primary-color: #2A5C8B; /* Trustworthy blue */
   --secondary-color: #6A994E; /* Sustainability green */
@@ -47,6 +50,13 @@ header {
 }
 .hero-logo {
   height:150px;
+}
+.dena-img {
+  display: block;
+  margin: 24px auto 0 auto;
+  max-width: 220px;
+  width: 100%;
+  height: auto;
 }
 .gih {
   height:150px;
@@ -193,6 +203,14 @@ main {
   opacity: 0.95;
 }
 
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
 .button {
   background: var(--accent-color);
   color: var(--neutral-dark);
