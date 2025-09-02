@@ -6,7 +6,28 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sectionIds = ['ueber-mich', 'leistungen', 'weiterbildungen', 'kontakt'];
     const sections = sectionIds.map(id => document.getElementById(id));
+    const heroSection = document.getElementById('hero');
+    const logo = document.querySelector('.logo');
+
+    // Logo: start large, shrink on scroll
+    const header = document.querySelector('header');
+    if (logo) {
+        logo.classList.add('logo-large');
+        if (header) header.classList.remove('header-small');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 20) {
+                logo.classList.remove('logo-large');
+                if (header) header.classList.add('header-small');
+            } else {
+                logo.classList.add('logo-large');
+                if (header) header.classList.remove('header-small');
+            }
+        });
+    }
+
+    // On load: hide all sections except hero
     sections.forEach(section => section.classList.add('hidden-section'));
+    if (heroSection) heroSection.classList.remove('hidden-section');
 
     // Add click event to nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -14,15 +35,19 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetId = this.getAttribute('href').replace('#', '');
             if (sectionIds.includes(targetId)) {
                 e.preventDefault();
-                // Hide all sections, show only the clicked section
+                // Hide hero, show only the clicked section
+                if (heroSection) heroSection.classList.add('hidden-section');
                 sections.forEach(section => {
                     if (section.id === targetId) section.classList.remove('hidden-section');
                     else section.classList.add('hidden-section');
                 });
-                // Smooth scroll to the section
-                document.getElementById(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // No scroll to section; just show/hide
+            } else if (targetId === '' || targetId === 'hero') {
+                // "Startseite" clicked: show only hero, hide all others
+                e.preventDefault();
+                if (heroSection) heroSection.classList.remove('hidden-section');
+                sections.forEach(section => section.classList.add('hidden-section'));
+                // No scroll to top for Startseite
             }
         });
     });

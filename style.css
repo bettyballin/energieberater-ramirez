@@ -75,7 +75,11 @@ header {
   height: 60px;
   width: auto;
   border-radius: 8px;
-  transition: transform 0.2s ease;
+  transition: height 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.2s ease;
+}
+
+.logo-large {
+  height: 120px !important;
 }
 
 .logo:hover {
@@ -131,12 +135,17 @@ header {
   color: var(--primary-color);
   font-weight: 600;
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   background: transparent;
   border-radius: 12px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+.header-small .header-content a {
+  font-size: 1rem;
+  transition: font-size 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
 .header-content a::before {
