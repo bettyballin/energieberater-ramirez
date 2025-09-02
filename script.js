@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Section info map for fallback
     const sectionInfo = {
+        'hero': {
+            title: '',
+            desc: ''
+        },
         'ueber-mich': {
             title: document.getElementById('ueber-mich')?.dataset.title || 'Über Mich',
             desc: document.getElementById('ueber-mich')?.dataset.desc || ''
@@ -54,9 +58,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateIntroBanner(sectionId) {
         if (!introBanner || !introTitle || !introDesc) return;
-        const info = sectionInfo[sectionId];
-        introTitle.textContent = info.title;
-        introDesc.textContent = info.desc;
+        if (sectionId === 'hero') {
+            introBanner.style.display = 'none';
+        } else {
+            introBanner.style.display = '';
+            const info = sectionInfo[sectionId];
+            introTitle.textContent = info.title;
+            introDesc.textContent = info.desc;
+        }
     }
 
     // On nav click, update banner
