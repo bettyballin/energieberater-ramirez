@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energieberater Ramirez</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">(function() {  emailjs.init(""); })();  </script>
+    <script type="text/javascript">(function() {  emailjs.init("F83ljz72RtOi48eV9"); })();  </script>
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="hero.css">
@@ -22,7 +22,15 @@
         <a href="index.html">
           <img src="espanol.png" alt="Logo" class="logo">
         </a>
-        <div class="header-content">
+        
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        
+        <div class="header-content" id="headerContent">
             <nav>
                 <ul>
                     <li><a href="">Startseite</a></li>
@@ -35,6 +43,9 @@
         </div>
       </div>
     </header>
+    
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
     <div class="intro-banner">
       <div class="intro-title"></div>
       <div class="intro-desc"></div>

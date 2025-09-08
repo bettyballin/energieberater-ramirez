@@ -85,6 +85,59 @@ document.addEventListener('DOMContentLoaded', function () {
     const heroSection = document.getElementById('hero');
     const logo = document.querySelector('.logo');
 
+    // Hamburger Menu Functionality
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const headerContent = document.getElementById('headerContent');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    
+    function toggleMobileMenu() {
+        const isActive = headerContent.classList.contains('active');
+        
+        if (isActive) {
+            // Close menu
+            headerContent.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        } else {
+            // Open menu
+            headerContent.classList.add('active');
+            hamburgerMenu.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function closeMobileMenu() {
+        headerContent.classList.remove('active');
+        hamburgerMenu.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Hamburger menu click event
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Mobile overlay click event
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Close mobile menu when navigation link is clicked
+    const navLinks = document.querySelectorAll('.header-content a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // Close mobile menu on window resize if screen becomes larger
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
+    });
+
     // Logo: start large, shrink on scroll
     const header = document.querySelector('header');
     if (logo) {
@@ -275,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Sending email with data:", formData);
         
         // Use emailjs.send instead of sendForm to explicitly pass the form data
-        emailjs.send("service_", "template_", formData)
+        emailjs.send("service_npdni2c", "template_z20cxdh", formData)
         .then(() => {
             clearTimeout(emailTimeout);
             statusDiv.textContent = 'Message sent successfully!';
