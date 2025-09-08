@@ -128,8 +128,9 @@
 .certification-badges {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.8rem;
   align-items: center;
+  margin-top: 1rem;
 }
 .cert-badge {
   height: 60px;
