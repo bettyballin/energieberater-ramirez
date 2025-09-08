@@ -1,0 +1,306 @@
+/* Weiterbildungen Section Styles */
+#weiterbildungen {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.weiterbildungen-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.weiterbildungen-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.weiterbildungen-header h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.weiterbildungen-header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Main Education Grid */
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Main Qualification Card */
+.main-qualification {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(44, 90, 160, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.main-qualification::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.main-qualification-content {
+    position: relative;
+    z-index: 2;
+}
+
+.main-qualification h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.main-qualification .institution {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.main-qualification .period {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.subject-item {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.subject-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.subject-item p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Additional Education Cards */
+.education-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.education-card h3 {
+    color: #2c5aa0;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.education-card .date {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.education-card p {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* PDF Documents Section */
+.documents-section {
+    margin-top: 60px;
+}
+
+.documents-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.documents-header h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.documents-header p {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.document-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+    position: relative;
+}
+
+.document-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.document-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.document-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+.document-card h4 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.document-card p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.document-link {
+    display: inline-flex;
+    align-items: center;
+    color: #2c5aa0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.document-link:hover {
+    color: #1e3a8a;
+    transform: translateX(5px);
+}
+
+.document-link svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.document-link:hover svg {
+    transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #weiterbildungen {
+        padding: 60px 0;
+    }
+    
+    .weiterbildungen-header h2 {
+        font-size: 2rem;
+    }
+    
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .main-qualification {
+        padding: 30px 20px;
+    }
+    
+    .main-qualification h3 {
+        font-size: 1.6rem;
+    }
+    
+    .subjects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .documents-header h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .weiterbildungen-container {
+        padding: 0 15px;
+    }
+    
+    .main-qualification {
+        padding: 25px 15px;
+    }
+    
+    .education-card {
+        padding: 20px;
+    }
+    
+    .document-card {
+        padding: 20px;
+    }
+}
