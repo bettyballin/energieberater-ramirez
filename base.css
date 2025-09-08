@@ -1,0 +1,31 @@
+/* Updated Color Palette */
+:root {
+  --primary-color: #2A5C8B; /* Trustworthy blue */
+  --secondary-color: #6A994E; /* Sustainability green */
+  --accent-color: #FFA040; /* Warm orange for CTAs */
+  --neutral-light: #F5F5F5; /* Light gray for backgrounds */
+  --neutral-dark: #333333; /* Dark gray for text */
+  --white: #FFFFFF;
+}
+
+html {
+  overscroll-behavior-y: none;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--neutral-light);
+  color: var(--neutral-dark);
+  overscroll-behavior-y: none;
+}
+.hidden-section {
+  display: none !important;
+}
+
+/* General .dena-img style for other uses */
+.dena-img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+}

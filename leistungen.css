@@ -1,0 +1,207 @@
+/* Leistungen Section Styles */
+#leistungen {
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(42,92,139,0.18);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.leistungen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  background: var(--primary-color);
+  padding: 3rem 2rem;
+}
+
+.leistungen-card {
+  background: var(--white);
+  color: var(--neutral-dark);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(42,92,139,0.10);
+  padding: 2.2rem 2rem 1.5rem 2rem;
+  border-left: 4px solid var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.leistungen-card:hover {
+  box-shadow: 0 8px 32px rgba(42,92,139,0.18);
+  transform: translateY(-4px) scale(1.01);
+  border-left: 6px solid var(--accent-color);
+}
+
+.leistungen-card h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  letter-spacing: 0.5px;
+}
+
+.leistungen-card ul {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 0 0 0 0.5rem;
+}
+
+.leistungen-card li {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.leistungen-card li strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.leistungen-card li em {
+  color: var(--accent-color);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Modern Leistungen Grid */
+.leistungen-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  background: var(--white);
+  padding: 3rem 2rem;
+}
+
+.leistung-card {
+  background: var(--white);
+  color: var(--neutral-dark);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(42,92,139,0.10);
+  padding: 2.2rem 2rem 1.5rem 2rem;
+  border-left: 4px solid var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.leistung-card:hover {
+  box-shadow: 0 8px 32px rgba(42,92,139,0.18);
+  transform: translateY(-4px) scale(1.01);
+  border-left: 6px solid var(--accent-color);
+}
+
+.leistung-card h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  letter-spacing: 0.5px;
+}
+
+.leistung-card ul {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 0 0 0 0.5rem;
+}
+
+.leistung-card li {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.leistung-card li strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.leistung-card li em {
+  color: var(--accent-color);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.leistung-card li ul {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+.leistung-card li ul li {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Leistung Icons */
+.leistung-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.leistung-icon-beratung {
+  background-color: var(--accent-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+}
+
+.leistung-icon-foerder {
+  background-color: var(--secondary-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z'/%3E%3C/svg%3E");
+}
+
+.leistung-icon-fachplanung {
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E");
+}
+
+.leistung-icon-nachweise {
+  background-color: var(--accent-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z'/%3E%3C/svg%3E");
+}
+
+/* Remove old Leistungen list styles (now handled in .leistungen-card) */
+#leistungen ul,
+#leistungen li {
+  all: unset;
+  display: revert;
+}
+
+#leistungen ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+#leistungen li {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .leistungen-grid,
+  .leistungen-modern-grid {
+    grid-template-columns: 1fr;
+    padding: 2rem 0.5rem;
+    gap: 1.2rem;
+  }
+  .leistungen-card,
+  .leistung-card {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+}

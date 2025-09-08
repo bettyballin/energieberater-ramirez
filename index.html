@@ -6,13 +6,19 @@
     <title>Energieberater Ramirez</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">(function() {  emailjs.init(""); })();  </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="ueber-mich.css">
+    <link rel="stylesheet" href="leistungen.css">
+    <link rel="stylesheet" href="kontakt.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body>
     <header>
       <div class="header-inner">
         <a href="index.html">
-          <img src="logo_haus.png" alt="Logo" class="logo">
+          <img src="logo_final.png" alt="Logo" class="logo">
         </a>
         <div class="header-content">
             <nav>
@@ -163,47 +169,58 @@
         </section>
 
         <section id="leistungen" data-title="Leistungen" data-desc="Entdecken Sie mein Angebot an Energieberatungsleistungen.">
-            <h2>Beratung & Konzepte</h2>
-            <ul>
+          <div class="leistungen-modern-grid">
+            <div class="leistung-card">
+              <div class="leistung-icon leistung-icon-beratung"></div>
+              <h3>Beratung & Konzepte</h3>
+              <ul>
                 <li><strong>Vor-Ort-Energieberatung:</strong> Begehung, Erfassung der Gebäudedaten und Anlagentechnik, Kurzprotokoll mit Handlungsempfehlungen.</li>
                 <li><strong>Individueller Sanierungsfahrplan (iSFP):</strong> Erstellung inkl. Priorisierung der Maßnahmen und Hinweisen zu zusätzlichen Fördermöglichkeiten.</li>
-            </ul>
-
-            <h2>Fördermittel</h2>
-            <ul>
+              </ul>
+            </div>
+            <div class="leistung-card">
+              <div class="leistung-icon leistung-icon-foerder"></div>
+              <h3>Fördermittel</h3>
+              <ul>
                 <li><strong>Fördermittelberatung (BAFA/KfW, BEG):</strong> Prüfung und Auswahl passender Programme (Zuschuss- oder Kreditvariante), u. a. für Einzelmaßnahmen und Effizienzhäuser.</li>
                 <li><strong>Antragstellung & Nachweise:</strong> Unterstützung bei der Erstellung förderrelevanter Unterlagen.</li>
-            </ul>
-
-            <h2>Fachplanung & Nachweise</h2>
-            <ul>
+              </ul>
+            </div>
+            <div class="leistung-card">
+              <div class="leistung-icon leistung-icon-fachplanung"></div>
+              <h3>Fachplanung & Nachweise</h3>
+              <ul>
                 <li><strong>Hydraulischer Abgleich:</strong> Berechnung und Dokumentation.</li>
                 <li><strong>Wärmebrücken (2D-Berechnungen):</strong> Ermittlung von:
-                    <ul>
-                        <li><em>fRsi-Wert</em> (Temperaturfaktor)</li>
-                        <li><em>Ψ-Wert</em> (längenbezogener Wärmedurchgangskoeffizient)</li>
-                        <li><em>L2D-Wert</em> (zweidimensionale Wärmeflussgröße)</li>
-                        <li><em>ΔUwB</em> (Wärmebrückenzuschlag)</li>
-                    </ul>
+                  <ul>
+                    <li><em>fRsi-Wert</em> (Temperaturfaktor)</li>
+                    <li><em>Ψ-Wert</em> (längenbezogener Wärmedurchgangskoeffizient)</li>
+                    <li><em>L2D-Wert</em> (zweidimensionale Wärmeflussgröße)</li>
+                    <li><em>ΔUwB</em> (Wärmebrückenzuschlag)</li>
+                  </ul>
                 </li>
                 <li><strong>Sommerlicher Wärmeschutz:</strong> Berechnungen nach DIN 4108-2.</li>
                 <li><strong>Lüftungskonzept:</strong> Auslegung gemäß DIN 1946-6 (u. a. nach dem „Schweizer Vorgehen“).</li>
                 <li><strong>Luftdichtheitskonzept:</strong> Planung der luftdichten Ebene und Details.</li>
                 <li><strong>Innendämmung:</strong> Nachweis gemäß WTA-Merkblatt 6-4.</li>
-                <li><strong>Dampfdiffusions-/Feuchteschutz:</strong> 
-                    <ul>
-                        <li>Nachweis nach DIN 4108-2/-3</li>
-                        <li>Untersuchung der <em>Trocknungsreserve</em> nach DIN 68800-2</li>
-                    </ul>
+                <li><strong>Dampfdiffusions-/Feuchteschutz:</strong>
+                  <ul>
+                    <li>Nachweis nach DIN 4108-2/-3</li>
+                    <li>Untersuchung der <em>Trocknungsreserve</em> nach DIN 68800-2</li>
+                  </ul>
                 </li>
-                <li><strong>Hygrothermische Simulationen:</strong> Feuchteschutzbeurteilung von Baukonstruktionen (dreistufiges Verfahren gemäß DIN 4108-3).</li>
-            </ul>
-
-            <h2>Nachweise & Dokumente</h2>
-            <ul>
+                <li><strong>Hygrothermische Simulationen (WUFI):</strong> Feuchteschutzbeurteilung von Baukonstruktionen (dreistufiges Verfahren gemäß DIN 4108-3).</li>
+              </ul>
+            </div>
+            <div class="leistung-card">
+              <div class="leistung-icon leistung-icon-nachweise"></div>
+              <h3>Nachweise & Dokumente</h3>
+              <ul>
                 <li><strong>Energieausweis:</strong> Erstellung als Verbrauchs- oder Bedarfsausweis.</li>
                 <li><strong>Baubegleitung:</strong> Fachliche Begleitung und Qualitätssicherung der Sanierungsmaßnahmen (förderkonform).</li>
-            </ul>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section id="weiterbildungen" data-title="Weiterbildungen" data-desc="Meine regelmäßigen Weiterbildungen für Ihre optimale Beratung.">
@@ -213,14 +230,11 @@
         </section>
 
         <section id="kontakt" data-title="Kontakt" data-desc="Nehmen Sie Kontakt auf für eine individuelle Beratung.">
-            <div class="contact-header">
-                <h2>Kontakt aufnehmen</h2>
-                <p class="contact-subtitle">Lassen Sie uns gemeinsam Ihre Energieeffizienz optimieren</p>
-            </div>
-            
             <div class="contact-content">
                 <div class="contact-info-card">
-                    <h3>Direkter Kontakt</h3>
+                    <div class="contact-cta">
+                        <p>Rufen Sie mich gerne direkt an oder nutzen Sie das Kontaktformular für eine unverbindliche Anfrage.</p>
+                    </div>
                     <div class="contact-info-items">
                         <div class="contact-info-item">
                             <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -251,9 +265,6 @@
                                 <span class="contact-value">Gundhelmer Str. 57<br>36381 Schlüchtern</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="contact-cta">
-                        <p>Rufen Sie mich gerne direkt an oder nutzen Sie das Kontaktformular für eine unverbindliche Anfrage.</p>
                     </div>
                 </div>
                 
@@ -313,7 +324,7 @@
 
     <footer>
       <div class="footer-inner">
-        <img src="logo_haus.png" alt="Logo" class="footer-logo" style="height:50px; margin-right:20px;">
+        <img src="logo_final.png" alt="Logo" class="footer-logo" style="height:50px; margin-right:20px;">
         <div class="footer-col footer-address">
           <div>Jairo Ramirez</div>
           <div>Energie-Effizienz-Experte</div>
