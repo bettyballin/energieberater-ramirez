@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
         emailjs.send("service_npdni2c", "template_z20cxdh", formData)
         .then(() => {
             clearTimeout(emailTimeout);
-            statusDiv.textContent = 'Message sent successfully!';
+            statusDiv.textContent = 'Nachricht erfolgreich versendet!';
             statusDiv.className = 'success-message';
             form.reset(); // Clear the form fields
             stopLoading();
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, (error) => {
             clearTimeout(emailTimeout);
             console.error("EmailJS Error:", error);
-            statusDiv.textContent = 'Error sending message. Please try again or contact directly via email.';
+            statusDiv.textContent = 'Fehler beim Senden. Versuchen Sie es erneut oder schreiben Sie mir direkt via Email';
             statusDiv.className = 'error-message';
             stopLoading();
             

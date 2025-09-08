@@ -10,6 +10,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  overflow: visible;
+  min-height: 56px;
+  max-height: 140px;
+  transition: min-height 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
 .intro-banner {
@@ -50,6 +54,9 @@ header {
   padding: 0 2rem;
   position: relative;
   min-height: 56px;
+  max-height: 140px;
+  overflow: visible;
+  transition: min-height 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
 .logo {
@@ -58,15 +65,27 @@ header {
   border-radius: 8px;
   transition: height 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
   background: transparent;
+  position: relative;
+  z-index: 1001;
 }
 
 .logo-large {
-  height: 200px !important;
+  height: 140px !important;
 }
 
 .logo:hover {
-  transform: scale(1.25);
+  transform: scale(1.15);
 }
+
+.logo:hover ~ .header-inner,
+.header-inner:has(.logo:hover) {
+  min-height: 112px;
+}
+
+header:has(.logo:hover) {
+  min-height: 112px;
+}
+
 
 .gih {
   height:150px;
