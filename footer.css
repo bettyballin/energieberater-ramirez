@@ -62,6 +62,7 @@ footer {
 .footer-logo {
   height: 100px;
   margin-right: 10px;
+  display:none;
 }
 
 footer a {
