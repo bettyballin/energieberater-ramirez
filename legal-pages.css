@@ -1,0 +1,228 @@
+/* Legal Pages (Impressum & Datenschutz) Styles */
+.legal-page {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.legal-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.legal-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.legal-header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Content Sections */
+.legal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.legal-content h2 {
+    color: #2c5aa0;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 3px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.legal-content h3 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+.legal-content p {
+    color: #495057;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.legal-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contact Information Styling */
+.contact-info {
+    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.contact-info p {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* Highlight Boxes */
+.highlight-box {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-left: 4px solid #2c5aa0;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.highlight-box p {
+    color: #1565c0;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+/* Navigation Back Button */
+.back-navigation {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(44, 90, 160, 0.3);
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(44, 90, 160, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.back-button svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Section Dividers */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #2c5aa0 50%, transparent 100%);
+    margin: 40px 0;
+    border: none;
+}
+
+/* List Styling */
+.legal-content ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.legal-content li {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .legal-page {
+        padding: 60px 0;
+    }
+    
+    .legal-container {
+        padding: 0 15px;
+    }
+    
+    .legal-header h1 {
+        font-size: 2rem;
+    }
+    
+    .legal-content {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    .legal-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .legal-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .contact-info {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .legal-content {
+        padding: 20px 15px;
+    }
+    
+    .back-button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .legal-page {
+        background: white;
+        padding: 20px 0;
+    }
+    
+    .legal-content {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .back-navigation {
+        display: none;
+    }
+    
+    .contact-info {
+        background: #f8f9fa;
+        color: #333;
+        border: 1px solid #ddd;
+    }
+    
+    .contact-info p {
+        color: #333;
+    }
+}
