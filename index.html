@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="kontakt.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="weiterbildungen.css">
+    <link rel="stylesheet" href="modal.css">
 </head>
 <body>
     <header>
@@ -566,8 +567,8 @@
           <div>E-Mail: info@energieberater-ramirez.de</div>
         </div>
         <div class="footer-col footer-links">
-          <div><a href="impressum.html">Impressum</a></div>
-          <div><a href="datenschutz.html">Datenschutz</a></div>
+          <div><a href="#" onclick="openModal('impressumModal')">Impressum</a></div>
+          <div><a href="#" onclick="openModal('datenschutzModal')">Datenschutz</a></div>
           <div><a href="#kontakt">Kontakt</a></div>
         </div>
       </div>
@@ -575,6 +576,227 @@
         &copy; 2025 Jairo Ramirez. Erstellt von: <a href="https://bballin.me">Bettina Ballin</a>
       </div>
     </footer>
+
+    <!-- Modal Overlays -->
+    <!-- Impressum Modal -->
+    <div id="impressumModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Impressum</h2>
+                <button class="modal-close" onclick="closeModal('impressumModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="legal-content">
+                    <h3>Angaben gemäß § 5 TMG</h3>
+                    <div class="contact-info">
+                        <p><strong>Energieberater Ramirez</strong></p>
+                        <p>Jairo Ramirez</p>
+                        <p>Gundhelmer Str. 57</p>
+                        <p>36381 Schlüchtern</p>
+                        <p>Deutschland</p>
+                    </div>
+                </div>
+
+                <div class="legal-content">
+                    <h3>Kontakt</h3>
+                    <p><strong>Telefon:</strong> +49 160 7764812</p>
+                    <p><strong>E-Mail:</strong> info@energieberater-ramirez.de</p>
+                    
+                    <div class="highlight-box">
+                        <p>Für eine schnelle Bearbeitung Ihrer Anfrage nutzen Sie gerne unser Kontaktformular auf der Startseite.</p>
+                        <button class="contact-button" onclick="closeModal('impressumModal'); document.querySelector('a[href=\'#kontakt\']').click();">Zum Kontaktformular</button>
+                    </div>
+                </div>
+
+                <div class="legal-content">
+                    <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
+                    <p><strong>Berufsbezeichnung:</strong> Energie-Effizienz-Experte</p>
+                    <p><strong>Zuständige Kammer:</strong> Handwerkskammer Frankfurt-Rhein-Main</p>
+                    <p><strong>Verliehen in:</strong> Deutschland</p>
+                    
+                    <h4>Mitgliedschaften</h4>
+                    <p>• GIH Bundesverband (Gebäudeenergieberater Ingenieure Handwerker)</p>
+                    <p>• BAFA Energie-Effizienz-Experten-Liste</p>
+                </div>
+
+                <div class="legal-content">
+                    <h3>Umsatzsteuer-ID</h3>
+                    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
+                    <p><strong>DE [wird bei Bedarf ergänzt]</strong></p>
+                </div>
+
+                <div class="legal-content">
+                    <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+                    <div class="contact-info">
+                        <p>Jairo Ramirez</p>
+                        <p>Gundhelmer Str. 57</p>
+                        <p>36381 Schlüchtern</p>
+                    </div>
+                </div>
+
+                <div class="legal-content">
+                    <h3>Haftungsausschluss</h3>
+                    
+                    <h4>Haftung für Inhalte</h4>
+                    <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                    
+                    <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+                    <h4>Haftung für Links</h4>
+                    <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+                    
+                    <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+                    <h4>Urheberrecht</h4>
+                    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+                    
+                    <p>Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+                </div>
+
+                <div class="legal-content">
+                    <h3>Streitschlichtung</h3>
+                    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a></p>
+                    
+                    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Datenschutz Modal -->
+    <div id="datenschutzModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Datenschutzerklärung</h2>
+                <button class="modal-close" onclick="closeModal('datenschutzModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="legal-content">
+                    <h3>1. Datenschutz auf einen Blick</h3>
+                    
+                    <h4>Allgemeine Hinweise</h4>
+                    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+                    
+                    <div class="highlight-box">
+                        <p>Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+                    </div>
+                </div>
+
+                <div class="legal-content">
+                    <h3>2. Datenerfassung auf dieser Website</h3>
+                    
+                    <h4>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
+                    <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.</p>
+                    
+                    <div class="contact-info">
+                        <p><strong>Verantwortliche Stelle:</strong></p>
+                        <p>Jairo Ramirez</p>
+                        <p>Gundhelmer Str. 57</p>
+                        <p>36381 Schlüchtern</p>
+                        <p>E-Mail: info@energieberater-ramirez.de</p>
+                    </div>
+
+                    <h4>Wie erfassen wir Ihre Daten?</h4>
+                    <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+                    
+                    <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p>
+
+                    <h4>Wofür nutzen wir Ihre Daten?</h4>
+                    <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+
+                    <h4>Welche Rechte haben Sie bezüglich Ihrer Daten?</h4>
+                    <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen.</p>
+                    
+                    <p>Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
+                </div>
+
+                <div class="legal-content">
+                    <h3>3. Hosting</h3>
+                    
+                    <h4>Externes Hosting</h4>
+                    <p>Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.</p>
+                    
+                    <p>Das Hosting erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).</p>
+                </div>
+
+                <div class="legal-content">
+                    <h3>4. Allgemeine Hinweise und Pflichtinformationen</h3>
+                    
+                    <h4>Datenschutz</h4>
+                    <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzbestimmungen sowie dieser Datenschutzerklärung.</p>
+                    
+                    <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.</p>
+
+                    <h4>Hinweis zur verantwortlichen Stelle</h4>
+                    <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+                    
+                    <div class="contact-info">
+                        <p>Jairo Ramirez<br>
+                        Gundhelmer Str. 57<br>
+                        36381 Schlüchtern</p>
+                        <p>Telefon: +49 160 7764812<br>
+                        E-Mail: info@energieberater-ramirez.de</p>
+                    </div>
+                    
+                    <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
+
+                    <h4>Speicherdauer</h4>
+                    <p>Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.</p>
+                </div>
+
+                <div class="legal-content">
+                    <h3>5. Datenerfassung auf dieser Website</h3>
+                    
+                    <h4>Server-Log-Dateien</h4>
+                    <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:</p>
+                    
+                    <ul>
+                        <li>Browsertyp und Browserversion</li>
+                        <li>verwendetes Betriebssystem</li>
+                        <li>Referrer URL</li>
+                        <li>Hostname des zugreifenden Rechners</li>
+                        <li>Uhrzeit der Serveranfrage</li>
+                        <li>IP-Adresse</li>
+                    </ul>
+                    
+                    <p>Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.</p>
+                    
+                    <p>Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden.</p>
+
+                    <h4>Kontaktformular</h4>
+                    <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+                    
+                    <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.</p>
+                    
+                    <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+                </div>
+
+                <div class="legal-content">
+                    <h3>6. Ihre Rechte</h3>
+                    
+                    <h4>Auskunftsrecht</h4>
+                    <p>Sie haben das Recht, jederzeit unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten.</p>
+                    
+                    <h4>Recht auf Berichtigung, Löschung und Einschränkung</h4>
+                    <p>Sie haben das Recht, jederzeit die Berichtigung unrichtiger personenbezogener Daten zu verlangen. Sie haben außerdem das Recht, die Vervollständigung unvollständiger personenbezogener Daten zu verlangen.</p>
+                    
+                    <p>Sie haben das Recht, die unverzügliche Löschung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen, sofern einer der gesetzlichen Löschungsgründe zutrifft und soweit die Verarbeitung nicht erforderlich ist.</p>
+                    
+                    <h4>Widerspruchsrecht</h4>
+                    <p>Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten Widerspruch einzulegen.</p>
+                    
+                    <h4>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h4>
+                    <p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu.</p>
+                    
+                    <div class="highlight-box">
+                        <p>Für Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte kontaktieren Sie uns gerne unter: info@energieberater-ramirez.de</p>
+                        <button class="contact-button" onclick="closeModal('datenschutzModal'); document.querySelector('a[href=\'#kontakt\']').click();">Zum Kontaktformular</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

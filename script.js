@@ -57,6 +57,23 @@ function stopLoading() {
 }
 
 
+// Modal functionality - Global functions
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add('show');
+        document.body.classList.add('modal-open');
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+    }
+}
+
 /**
  * Section toggling and smooth scrolling
  * - On load: show only hero section, hide all others.
@@ -278,5 +295,28 @@ document.addEventListener('DOMContentLoaded', function () {
             // Re-enable form inputs
             formInputs.forEach(input => input.disabled = false);
         });
+    });
+    
+    // Initialize modal event listeners
+    const modals = document.querySelectorAll('.modal-overlay');
+    
+    modals.forEach(modal => {
+        // Click outside to close
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal(modal.id);
+            }
+        });
+    });
+    
+    // Escape key to close any open modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            modals.forEach(modal => {
+                if (modal.classList.contains('show')) {
+                    closeModal(modal.id);
+                }
+            });
+        }
     });
 });
