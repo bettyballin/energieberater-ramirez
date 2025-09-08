@@ -2,7 +2,7 @@
 footer {
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 1.5rem 0 0.5rem 0;
+  padding: 1.5rem 0 0 0;
   font-size: 1rem;
 }
 
@@ -57,6 +57,8 @@ footer {
   margin-top: 1.5rem;
   font-size: 0.95em;
   color: var(--white);
+  background-color: rgba(76, 130, 181, 0.7);
+  border-radius: 2rem;
 }
 
 .footer-logo {
