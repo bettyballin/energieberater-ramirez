@@ -1,11 +1,50 @@
-/* Updated Color Palette */
+/* Standardized Color Palette - Primary and Accent Colors Only */
 :root {
-  --primary-color: #2A5C8B; /* Trustworthy blue */
-  --secondary-color: #6A994E; /* Sustainability green */
-  --accent-color: #FFA040; /* Warm orange for CTAs */
-  --neutral-light: #F5F5F5; /* Light gray for backgrounds */
-  --neutral-dark: #333333; /* Dark gray for text */
+  /* Primary Color - Trustworthy Blue */
+  --primary-color: #2A5C8B;
+  --primary-light: #4A7CAB;
+  --primary-dark: #1E4A6B;
+  --primary-lighter: #6A9BCB;
+  --primary-darker: #123A5B;
+  
+  /* Accent Color - Warm Orange */
+  --accent-color: #FFA040;
+  --accent-light: #FFB366;
+  --accent-dark: #FF8800;
+  --accent-lighter: #FFC999;
+  --accent-darker: #E67700;
+  
+  /* Neutral Colors - White, Grey, Black variations only */
   --white: #FFFFFF;
+  --neutral-lightest: #FAFAFA;
+  --neutral-light: #F5F5F5;
+  --neutral-medium: #E0E0E0;
+  --neutral-dark: #666666;
+  --neutral-darker: #333333;
+  --black: #000000;
+  
+  /* Gradient Combinations */
+  --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+  --gradient-primary-accent: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  
+  /* Transparent variations for overlays */
+  --primary-alpha-10: rgba(42, 92, 139, 0.1);
+  --primary-alpha-20: rgba(42, 92, 139, 0.2);
+  --primary-alpha-30: rgba(42, 92, 139, 0.3);
+  --primary-alpha-50: rgba(42, 92, 139, 0.5);
+  --primary-alpha-70: rgba(42, 92, 139, 0.7);
+  --primary-alpha-90: rgba(42, 92, 139, 0.9);
+  
+  --accent-alpha-10: rgba(255, 160, 64, 0.1);
+  --accent-alpha-20: rgba(255, 160, 64, 0.2);
+  --accent-alpha-30: rgba(255, 160, 64, 0.3);
+  --accent-alpha-50: rgba(255, 160, 64, 0.5);
+  
+  --black-alpha-50: rgba(0, 0, 0, 0.5);
+  --black-alpha-80: rgba(0, 0, 0, 0.8);
+  --white-alpha-90: rgba(255, 255, 255, 0.9);
+  --white-alpha-95: rgba(255, 255, 255, 0.95);
 }
 
 html {
@@ -16,7 +55,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--neutral-light);
-  color: var(--neutral-dark);
+  color: var(--neutral-darker);
   overscroll-behavior-y: none;
 }
 .hidden-section {

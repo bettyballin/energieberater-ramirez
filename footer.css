@@ -57,7 +57,7 @@ footer {
   margin-top: 1.5rem;
   font-size: 0.95em;
   color: var(--white);
-  background-color: rgba(76, 130, 181, 0.7);
+  background-color: var(--primary-light);
   border-radius: 2rem;
 }
 

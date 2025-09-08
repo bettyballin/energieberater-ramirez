@@ -4,7 +4,7 @@
   padding: 1rem;
   background-color: var(--white);
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(42,92,139,0.08);
+  box-shadow: 0 4px 24px var(--primary-alpha-10);
   text-align: left;
   position: relative;
   overflow: visible;
@@ -15,7 +15,7 @@
   background: var(--primary-color);
   color: var(--white);
   border-radius: 0;
-  box-shadow: 0 8px 32px rgba(42,92,139,0.25);
+  box-shadow: 0 8px 32px var(--primary-alpha-30);
   position: relative;
   overflow: hidden;
   margin-bottom: 2rem;
@@ -24,7 +24,7 @@
 .professional-header {
   text-align: center;
   padding: 3rem 2rem 2rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1e4a6b 100%);
+  background: var(--gradient-primary);
   position: relative;
 }
 .professional-header::after {
@@ -57,7 +57,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
   background: var(--white);
-  color: var(--neutral-dark);
+  color: var(--neutral-darker);
 }
 
 /* Expert Profile Card */
@@ -138,7 +138,7 @@
   background: var(--white);
   padding: 6px 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(42,92,139,0.10);
+  box-shadow: 0 2px 8px var(--primary-alpha-10);
 }
 .expert-highlights {
   display: grid;
@@ -193,7 +193,7 @@
 .service-block:hover {
   border-color: var(--accent-color);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(42,92,139,0.15);
+  box-shadow: 0 6px 20px var(--primary-alpha-20);
 }
 .service-icon {
   font-size: 2.5rem;
@@ -209,7 +209,7 @@
 .service-block p {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: var(--neutral-dark);
+  color: var(--neutral-darker);
   margin: 0;
   opacity: 0.8;
 }
@@ -287,7 +287,7 @@
   transition: all 0.3s ease;
 }
 .tech-category li:hover {
-  background: rgba(42,92,139,0.05);
+  background: var(--primary-alpha-10);
   transform: translateX(5px);
 }
 

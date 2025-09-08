@@ -1,22 +1,11 @@
-/* Grundfarben */
-:root {
-  --primary-color: rgb(42, 92, 139);
-  --accent-color: rgb(255, 160, 64);
-  --text-color: #333;
-  --text-light: #666;
-  --bg-light: #f8f9fa;
-  --bg-white: #fff;
-  --border-light: rgba(42, 92, 139, 0.08);
-  --shadow-light: rgba(0, 0, 0, 0.08);
-  --shadow-medium: rgba(0, 0, 0, 0.15);
-}
+/* Using standardized color palette from base.css */
 
 /* Section Layout */
 #leistungen {
   padding: 4rem 2rem;
-  background: var(--bg-light);
+  background: var(--neutral-light);
   font-family: "Segoe UI", Roboto, sans-serif;
-  color: var(--text-color);
+  color: var(--neutral-darker);
 }
 
 /* Container */
@@ -53,7 +42,7 @@
 
 .leistungen-subtitle {
   font-size: 1.3rem;
-  color: var(--text-light);
+  color: var(--neutral-dark);
   margin: 0;
   font-weight: 400;
   max-width: 600px;
@@ -69,10 +58,10 @@
 
 /* Category Cards - Full Width */
 .leistungen-category {
-  background: var(--bg-white);
+  background: var(--white);
   border-radius: 16px;
-  box-shadow: 0 10px 40px var(--shadow-light);
-  border: 2px solid var(--border-light);
+  box-shadow: 0 10px 40px var(--primary-alpha-10);
+  border: 2px solid var(--primary-alpha-10);
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -80,7 +69,7 @@
 
 .leistungen-category:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px var(--shadow-medium);
+  box-shadow: 0 20px 60px var(--primary-alpha-20);
   border-color: var(--primary-color);
 }
 
@@ -97,8 +86,8 @@
 
 /* Background Images with Overlay for Headers */
 .leistungen-category:nth-child(1) .category-header {
-  background-image: 
-    linear-gradient(135deg, rgba(42, 92, 139, 0.9) 0%, rgba(42, 92, 139, 0.85) 100%),
+  background-image:
+    linear-gradient(135deg, var(--primary-alpha-90) 0%, var(--primary-alpha-90) 100%),
     url('beratung.png');
   background-size: cover;
   background-position: center;
@@ -106,8 +95,8 @@
 }
 
 .leistungen-category:nth-child(2) .category-header {
-  background-image: 
-    linear-gradient(135deg, rgba(42, 92, 139, 0.9) 0%, rgba(42, 92, 139, 0.85) 100%),
+  background-image:
+    linear-gradient(135deg, var(--primary-alpha-90) 0%, var(--primary-alpha-90) 100%),
     url('mittel.png');
   background-size: cover;
   background-position: center;
@@ -116,30 +105,30 @@
 
 .leistungen-category:nth-child(3) .category-header,
 .leistungen-category:nth-child(4) .category-header {
-  background: linear-gradient(135deg, var(--primary-color) 0%, rgba(42, 92, 139, 0.9) 100%);
+  background: var(--gradient-primary);
 }
 
 .category-title h3 {
-  color: white;
+  color: var(--white);
   font-size: 1.8rem;
   font-weight: 700;
   margin: 0 0 0.5rem 0;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px var(--black-alpha-50);
 }
 
 .category-title p {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--white-alpha-90);
   font-size: 1rem;
   margin: 0;
   font-weight: 500;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 2px var(--black-alpha-50);
 }
 
 /* Services List - Clean White Background */
 .services-list {
-  background: var(--bg-white);
+  background: var(--white);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -149,7 +138,7 @@
 /* Service Items - Clean List Style */
 .service-item {
   padding: 1.5rem 2rem;
-  background: var(--bg-light);
+  background: var(--neutral-light);
   border-radius: 10px;
   border-left: 4px solid var(--primary-color);
   transition: all 0.3s ease;
@@ -157,9 +146,9 @@
 }
 
 .service-item:hover {
-  background: var(--bg-white);
+  background: var(--white);
   border-left-color: var(--accent-color);
-  box-shadow: 0 6px 20px var(--shadow-light);
+  box-shadow: 0 6px 20px var(--primary-alpha-10);
   transform: translateX(6px);
 }
 
@@ -177,7 +166,7 @@
 }
 
 .service-item p {
-  color: var(--text-color);
+  color: var(--neutral-darker);
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
@@ -272,11 +261,11 @@
 
 /* Bold typography emphasis */
 .leistungen-header h2 {
-  text-shadow: 0 2px 4px rgba(42, 92, 139, 0.1);
+  text-shadow: 0 2px 4px var(--primary-alpha-10);
 }
 
 .category-title h3 {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px var(--black-alpha-50);
 }
 
 /* Service item numbering for better scanning */

@@ -1,7 +1,7 @@
 /* Weiterbildungen Section Styles */
 #weiterbildungen {
     padding: 80px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, var(--neutral-light) 0%, var(--neutral-medium) 100%);
     min-height: 100vh;
 }
 
@@ -18,14 +18,14 @@
 
 .weiterbildungen-header h2 {
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: var(--primary-color);
     margin-bottom: 20px;
     font-weight: 700;
 }
 
 .weiterbildungen-header p {
     font-size: 1.2rem;
-    color: #6c757d;
+    color: var(--neutral-dark);
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -42,11 +42,11 @@
 /* Main Qualification Card */
 .main-qualification {
     grid-column: 1 / -1;
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
-    color: white;
+    background: var(--gradient-primary);
+    color: var(--black);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(44, 90, 160, 0.3);
+    box-shadow: 0 20px 40px var(--primary-alpha-30);
     position: relative;
     overflow: hidden;
 }
@@ -58,7 +58,7 @@
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--white-alpha-90) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -119,35 +119,35 @@
 
 /* Additional Education Cards */
 .education-card {
-    background: white;
+    background: var(--white);
     padding: 30px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px var(--black-alpha-50);
     transition: all 0.3s ease;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--neutral-medium);
 }
 
 .education-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px var(--primary-alpha-20);
 }
 
 .education-card h3 {
-    color: #2c5aa0;
+    color: var(--primary-color);
     font-size: 1.4rem;
     margin-bottom: 15px;
     font-weight: 600;
 }
 
 .education-card .date {
-    color: #6c757d;
+    color: var(--neutral-dark);
     font-size: 0.9rem;
     margin-bottom: 15px;
     font-weight: 500;
 }
 
 .education-card p {
-    color: #495057;
+    color: var(--neutral-darker);
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -164,13 +164,13 @@
 
 .documents-header h3 {
     font-size: 2rem;
-    color: #2c3e50;
+    color: var(--primary-color);
     margin-bottom: 15px;
     font-weight: 600;
 }
 
 .documents-header p {
-    color: #6c757d;
+    color: var(--neutral-dark);
     font-size: 1.1rem;
 }
 
@@ -181,24 +181,24 @@
 }
 
 .document-card {
-    background: white;
+    background: var(--white);
     border-radius: 12px;
     padding: 25px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 25px var(--black-alpha-50);
     transition: all 0.3s ease;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--neutral-medium);
     position: relative;
 }
 
 .document-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px var(--primary-alpha-20);
 }
 
 .document-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    background: var(--gradient-accent);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -209,18 +209,18 @@
 .document-icon svg {
     width: 24px;
     height: 24px;
-    color: white;
+    color: var(--white);
 }
 
 .document-card h4 {
-    color: #2c3e50;
+    color: var(--primary-color);
     font-size: 1.2rem;
     margin-bottom: 10px;
     font-weight: 600;
 }
 
 .document-card p {
-    color: #6c757d;
+    color: var(--neutral-dark);
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -229,14 +229,14 @@
 .document-link {
     display: inline-flex;
     align-items: center;
-    color: #2c5aa0;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .document-link:hover {
-    color: #1e3a8a;
+    color: var(--primary-dark);
     transform: translateX(5px);
 }
 
