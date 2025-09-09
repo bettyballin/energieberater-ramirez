@@ -170,13 +170,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (section.id === targetId) section.classList.remove('hidden-section');
                     else section.classList.add('hidden-section');
                 });
-                // No scroll to section; just show/hide
+                // Scroll to top of page when navigating to a section
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else if (targetId === '' || targetId === 'hero') {
                 // "Startseite" clicked: show only hero, hide all others
                 e.preventDefault();
                 if (heroSection) heroSection.classList.remove('hidden-section');
                 sections.forEach(section => section.classList.add('hidden-section'));
-                // No scroll to top for Startseite
+                // Scroll to top when returning to homepage
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
     });

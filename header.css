@@ -310,10 +310,10 @@ header:has(.logo:hover) {
   }
   
   .logo {
-    height: 45px;
+    height: 145px;
   }
   
   .logo-large {
-    height: 55px !important;
+    height: 155px !important;
   }
 }

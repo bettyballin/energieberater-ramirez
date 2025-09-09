@@ -1,6 +1,5 @@
 /* Weiterbildungen Section Styles */
 #weiterbildungen {
-    padding: 80px 0;
     background: linear-gradient(135deg, var(--neutral-light) 0%, var(--neutral-medium) 100%);
     min-height: 100vh;
 }
@@ -36,7 +35,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    margin-bottom: 60px;
 }
 
 /* Main Qualification Card */
