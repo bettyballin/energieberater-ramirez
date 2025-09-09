@@ -12,7 +12,7 @@ header {
   z-index: 1000;
   overflow: visible;
   min-height: 56px;
-  max-height: 140px;
+  max-height: 130px;
   transition: min-height 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
@@ -54,13 +54,13 @@ header {
   padding: 0 2rem;
   position: relative;
   min-height: 56px;
-  max-height: 140px;
+  max-height: 100px;
   overflow: visible;
   transition: min-height 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
 .logo {
-  height: 90px;
+  height: 200px;
   width: auto;
   border-radius: 8px;
   transition: height 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
@@ -70,11 +70,12 @@ header {
 }
 
 .logo-large {
-  height: 140px !important;
+  height: 240px !important;
+  margin-top: 15px;
 }
 
 .logo:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 .logo:hover ~ .header-inner,
