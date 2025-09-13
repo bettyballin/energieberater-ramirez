@@ -523,6 +523,11 @@
   transform: translateX(4px);
 }
 
+/* Hidden section class for JavaScript navigation */
+.about-intro-section.hidden-section {
+  display: none !important;
+}
+
 /* Technical Expertise */
 .technical-expertise {
   background: var(--white);

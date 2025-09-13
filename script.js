@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sectionIds = ['ueber-mich', 'leistungen', 'weiterbildungen', 'kontakt'];
     const sections = sectionIds.map(id => document.getElementById(id));
     const heroSection = document.getElementById('hero');
+    const aboutIntroSection = document.getElementById('about-intro');
     const logo = document.querySelector('.logo');
 
     // Hamburger Menu Functionality
@@ -154,9 +155,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // On load: hide all sections except hero
+    // On load: hide all sections except hero, show about-intro
     sections.forEach(section => section.classList.add('hidden-section'));
     if (heroSection) heroSection.classList.remove('hidden-section');
+    if (aboutIntroSection) aboutIntroSection.classList.remove('hidden-section');
 
     // Add click event to nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -164,8 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetId = this.getAttribute('href').replace('#', '');
             if (sectionIds.includes(targetId)) {
                 e.preventDefault();
-                // Hide hero, show only the clicked section
+                // Hide hero and about-intro, show only the clicked section
                 if (heroSection) heroSection.classList.add('hidden-section');
+                if (aboutIntroSection) aboutIntroSection.classList.add('hidden-section');
                 sections.forEach(section => {
                     if (section.id === targetId) section.classList.remove('hidden-section');
                     else section.classList.add('hidden-section');
@@ -173,9 +176,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Scroll to top of page when navigating to a section
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else if (targetId === '' || targetId === 'hero') {
-                // "Startseite" clicked: show only hero, hide all others
+                // "Startseite" clicked: show hero and about-intro, hide all others
                 e.preventDefault();
                 if (heroSection) heroSection.classList.remove('hidden-section');
+                if (aboutIntroSection) aboutIntroSection.classList.remove('hidden-section');
                 sections.forEach(section => section.classList.add('hidden-section'));
                 // Scroll to top when returning to homepage
                 window.scrollTo({ top: 0, behavior: 'smooth' });
