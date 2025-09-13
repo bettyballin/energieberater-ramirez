@@ -381,6 +381,148 @@
   color: var(--accent-color);
 }
 
+/* About Introduction Section */
+.about-intro-section {
+  background: var(--white);
+  padding: 4rem 0;
+  margin: 0;
+}
+
+.about-intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.about-intro-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-intro-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-intro-photo {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--primary-color);
+  box-shadow: 0 8px 32px var(--primary-alpha-20);
+  transition: all 0.3s ease;
+}
+
+.about-intro-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 48px var(--primary-alpha-30);
+}
+
+.about-intro-badges {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.about-intro-badge {
+  height: 70px;
+  width: auto;
+  background: var(--white);
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--primary-alpha-15);
+  transition: all 0.3s ease;
+}
+
+.about-intro-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--primary-alpha-25);
+}
+
+.about-intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-intro-text h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 0;
+  position: relative;
+}
+
+.about-intro-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.about-intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--neutral-darker);
+  margin: 0;
+  text-align: justify;
+}
+
+.about-intro-text p:first-of-type::first-letter {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--primary-color);
+  float: left;
+  line-height: 1;
+  margin-right: 4px;
+  margin-top: 2px;
+}
+
+.about-intro-cta {
+  margin-top: 1rem;
+}
+
+.about-intro-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px var(--primary-alpha-20);
+}
+
+.about-intro-button:hover {
+  background: var(--primary-darker);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-alpha-30);
+  color: var(--white);
+}
+
+.about-intro-button::after {
+  content: '→';
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.about-intro-button:hover::after {
+  transform: translateX(4px);
+}
+
 /* Technical Expertise */
 .technical-expertise {
   background: var(--white);
@@ -453,6 +595,26 @@
   .about-section {
     padding: 1.5rem;
   }
+  
+  .about-intro-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .about-intro-photo {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .about-intro-text h2 {
+    font-size: 2.2rem;
+  }
+  
+  .about-intro-text h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 @media (max-width: 768px) {
   .professional-header {
@@ -518,6 +680,37 @@
   .about-section p {
     font-size: 0.9rem;
     text-align: left;
+  }
+  
+  .about-intro-section {
+    padding: 3rem 0;
+  }
+  
+  .about-intro-container {
+    padding: 0 1.5rem;
+  }
+  
+  .about-intro-content {
+    gap: 2.5rem;
+  }
+  
+  .about-intro-photo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .about-intro-text h2 {
+    font-size: 2rem;
+  }
+  
+  .about-intro-text p {
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .about-intro-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 @media (max-width: 480px) {
@@ -588,6 +781,47 @@
     font-size: 0.85rem;
     line-height: 1.6;
     margin-bottom: 1rem;
+  }
+  
+  .about-intro-section {
+    padding: 2rem 0;
+  }
+  
+  .about-intro-container {
+    padding: 0 1rem;
+  }
+  
+  .about-intro-content {
+    gap: 2rem;
+  }
+  
+  .about-intro-photo {
+    width: 160px;
+    height: 160px;
+    border-width: 4px;
+  }
+  
+  .about-intro-badges {
+    gap: 0.5rem;
+  }
+  
+  .about-intro-badge {
+    height: 50px;
+    padding: 6px 8px;
+  }
+  
+  .about-intro-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .about-intro-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .about-intro-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
   }
 }
 #ueber-mich h2, #leistungen h2, #berufserfahrung h2, #weiterbildungen h2, #kenntnisse h2, #kontakt h2 {
