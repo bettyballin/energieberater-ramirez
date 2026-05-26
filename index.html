@@ -35,9 +35,12 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">(function() {  emailjs.init("F83ljz72RtOi48eV9"); })();  </script>
+    <meta name="theme-color" content="#2c5f2d">
+
+    <!-- Preconnect + preload LCP -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preload" as="image" href="schriften.png" fetchpriority="high">
+
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="hero.css">
@@ -47,6 +50,9 @@
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="weiterbildungen.css">
     <link rel="stylesheet" href="modal.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script defer>window.addEventListener('DOMContentLoaded', function() { if (window.emailjs) emailjs.init("F83ljz72RtOi48eV9"); });</script>
     
     <!-- Structured Data - LocalBusiness Schema -->
     <script type="application/ld+json">
@@ -165,7 +171,7 @@
     <header>
       <div class="header-inner">
         <a href="index.html">
-          <img src="espanol.png" alt="Energieberater Ramirez - BAFA zertifizierter Energieberater Schlüchtern" class="logo">
+          <img src="espanol.png" alt="Energieberater Ramirez - BAFA zertifizierter Energieberater Schlüchtern" class="logo" width="1024" height="1536" fetchpriority="high">
         </a>
         
         <!-- Hamburger Menu Button -->
@@ -178,7 +184,7 @@
         <div class="header-content" id="headerContent">
             <nav>
                 <ul>
-                    <li><a href="">Startseite</a></li>
+                    <li><a href="/">Startseite</a></li>
                     <li><a href="#ueber-mich">Über Mich</a></li>
                     <li><a href="#leistungen">Meine Leistungen</a></li>
                     <li><a href="#weiterbildungen">Weiterbildungen</a></li>
@@ -216,10 +222,10 @@
           <div class="about-intro-container">
             <div class="about-intro-content">
               <div class="about-intro-image">
-                <img src="ramirez.jpg" alt="Jairo Ramirez - BAFA zertifizierter Energieberater aus Schlüchtern mit 30+ Jahren Erfahrung" class="about-intro-photo">
+                <img src="ramirez.jpg" alt="Jairo Ramirez - BAFA zertifizierter Energieberater aus Schlüchtern mit 30+ Jahren Erfahrung" class="about-intro-photo" width="1080" height="1620" loading="lazy" decoding="async">
                 <div class="about-intro-badges">
-                  <img src="gih.png" alt="GIH Mitglied - Bundesverband Gebäudeenergieberater Ingenieure Handwerker" class="about-intro-badge">
-                  <img src="dena.jpg" alt="DENA Zertifikat - Deutsche Energie-Agentur Qualifikation" class="about-intro-badge">
+                  <img src="gih.png" alt="GIH Mitglied - Bundesverband Gebäudeenergieberater Ingenieure Handwerker" class="about-intro-badge" width="6128" height="2274" loading="lazy" decoding="async">
+                  <img src="dena.jpg" alt="DENA Zertifikat - Deutsche Energie-Agentur Qualifikation" class="about-intro-badge" width="965" height="234" loading="lazy" decoding="async">
                 </div>
               </div>
               <div class="about-intro-text">
@@ -245,10 +251,10 @@
               <div class="expert-photo-bg"></div>
               <div class="expert-header">
                 <div class="expert-left">
-                  <img src="ramirez.jpg" alt="Jairo Ramirez" class="expert-photo">
+                  <img src="ramirez.jpg" alt="Jairo Ramirez" class="expert-photo" width="1080" height="1620" loading="lazy" decoding="async">
                   <div class="certification-badges">
-                    <img src="gih.png" alt="GIH Mitglied" class="cert-badge">
-                    <img src="dena.jpg" alt="DENA Zertifikat" class="cert-badge">
+                    <img src="gih.png" alt="GIH Mitglied" class="cert-badge" width="6128" height="2274" loading="lazy" decoding="async">
+                    <img src="dena.jpg" alt="DENA Zertifikat" class="cert-badge" width="965" height="234" loading="lazy" decoding="async">
                   </div>
                 </div>
                 <div class="expert-info">
@@ -1035,7 +1041,7 @@
 
     <footer>
       <div class="footer-inner">
-        <img src="espanol.png" alt="Logo" class="footer-logo" style="height:50px; margin-right:20px;">
+        <img src="espanol.png" alt="Energieberater Ramirez Logo" class="footer-logo" width="1024" height="1536" loading="lazy" decoding="async" style="height:50px; margin-right:20px;">
         <div class="footer-col footer-address">
           <div>Jairo Ramirez</div>
           <div>Energie-Effizienz-Experte</div>
@@ -1047,13 +1053,13 @@
           <div>E-Mail: info@energieberater-ramirez.de</div>
         </div>
         <div class="footer-col footer-links">
-          <div><a href="#" onclick="openModal('impressumModal')">Impressum</a></div>
-          <div><a href="#" onclick="openModal('datenschutzModal')">Datenschutz</a></div>
+          <div><a href="impressum.html">Impressum</a></div>
+          <div><a href="datenschutz.html">Datenschutz</a></div>
           <div><a href="#kontakt">Kontakt</a></div>
         </div>
       </div>
       <div class="footer-copyright">
-        &copy; 2025 Jairo Ramirez. Erstellt von: <a href="https://bballin.me">Bettina Ballin</a>
+        &copy; 2025 Jairo Ramirez. Erstellt von: <a href="https://bballin.me" rel="noopener" target="_blank">Bettina Ballin</a>
       </div>
     </footer>
 
