@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.vscode/
+Disallow: /plans/
+
+# Sitemap location
+Sitemap: https://energieberater-ramirez.de/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
