@@ -24,22 +24,29 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://energieberater-ramirez.de/">
     <meta property="og:image" content="https://energieberater-ramirez.de/ramirez.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1080">
+    <meta property="og:image:height" content="1620">
+    <meta property="og:image:alt" content="Jairo Ramirez - BAFA zertifizierter Energieberater aus Schlüchtern">
     <meta property="og:locale" content="de_DE">
     <meta property="og:site_name" content="Energieberater Ramirez">
-    
+
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Energieberater Schlüchtern | BAFA zertifiziert">
     <meta name="twitter:description" content="BAFA zertifizierter Energieberater in Schlüchtern & Frankfurt. 30+ Jahre Erfahrung in Energieberatung.">
     <meta name="twitter:image" content="https://energieberater-ramirez.de/ramirez.jpg">
-    
-    <!-- Favicon -->
+    <meta name="twitter:image:alt" content="Jairo Ramirez - BAFA zertifizierter Energieberater aus Schlüchtern">
+
+    <!-- Favicon & app icons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="theme-color" content="#2c5f2d">
+    <meta name="msapplication-TileColor" content="#2c5f2d">
 
     <!-- Preconnect + preload LCP -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preload" as="image" href="schriften.png" fetchpriority="high">
+    <link rel="preload" as="image" href="schriften.webp" type="image/webp" fetchpriority="high">
 
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="header.css">
@@ -166,12 +173,150 @@
       ]
     }
     </script>
+
+    <!-- Person Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://energieberater-ramirez.de/#jairo-ramirez",
+      "name": "Jairo Ramirez",
+      "jobTitle": "Energie-Effizienz-Experte",
+      "description": "BAFA zertifizierter Energie-Effizienz-Experte mit über 30 Jahren Erfahrung im Bauwesen. Spezialisiert auf Energieberatung, Sanierungsfahrpläne, Fördermittelberatung und Anlagentechnik.",
+      "image": "https://energieberater-ramirez.de/ramirez.jpg",
+      "telephone": "+49-160-7764812",
+      "email": "info@energieberater-ramirez.de",
+      "url": "https://energieberater-ramirez.de/",
+      "worksFor": {
+        "@id": "https://energieberater-ramirez.de/#business"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Gundhelmer Str. 57",
+          "addressLocality": "Schlüchtern",
+          "postalCode": "36381",
+          "addressRegion": "Hessen",
+          "addressCountry": "DE"
+        }
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universität Kassel"
+      },
+      "knowsAbout": [
+        "Energieberatung",
+        "Sanierungsfahrplan (iSFP)",
+        "Energieausweis",
+        "BAFA Fördermittel",
+        "KfW Fördermittel",
+        "GEG-Berechnung",
+        "Wärmepumpen",
+        "Photovoltaik",
+        "Solarthermie",
+        "Hydraulischer Abgleich",
+        "Wärmebrückenberechnung",
+        "Lüftungskonzepte DIN 1946-6",
+        "Hygrothermische Simulation (WUFI)",
+        "Innendämmung",
+        "Sommerlicher Wärmeschutz"
+      ],
+      "knowsLanguage": ["de", "es"],
+      "memberOf": {
+        "@type": "Organization",
+        "name": "GIH Bundesverband Gebäudeenergieberater Ingenieure Handwerker"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "BAFA Energie-Effizienz-Experte für Wohngebäude",
+          "credentialCategory": "certification"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Anlagenplaner erneuerbare Energien",
+          "credentialCategory": "degree",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "Universität Kassel"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Maurermeister",
+          "credentialCategory": "certification"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was kostet eine Energieberatung in Schlüchtern oder Frankfurt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Kosten richten sich nach Umfang und Gebäudegröße. Für einen individuellen Sanierungsfahrplan (iSFP) übernimmt die BAFA bis zu 50 % der förderfähigen Beratungskosten (max. 650 € bei Ein- und Zweifamilienhäusern). Ich erstelle Ihnen gerne ein unverbindliches Festpreisangebot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Fördermittel gibt es für eine energetische Sanierung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bund und Länder fördern energetische Sanierungen u. a. über die BAFA (Bundesförderung für effiziente Gebäude – Einzelmaßnahmen) und die KfW (Bundesförderung für effiziente Gebäude – Wohngebäude, Kredit 261). Mit einem iSFP erhalten Sie zusätzlich einen iSFP-Bonus von 5 % auf förderfähige Maßnahmen. Ich prüfe für Ihr Projekt alle in Frage kommenden Programme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lange dauert die Ausstellung eines Energieausweises?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein Verbrauchsausweis liegt in der Regel innerhalb von 1–2 Wochen nach Vorliegen aller Verbrauchsdaten vor. Ein Bedarfsausweis erfordert eine Vor-Ort-Aufnahme und ist meist innerhalb von 3–4 Wochen fertiggestellt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist ein individueller Sanierungsfahrplan (iSFP)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der iSFP ist ein vom BMWK gefördertes Beratungsinstrument, das auf Basis einer Vor-Ort-Begehung einen schrittweisen Sanierungsplan für Ihr Wohngebäude erstellt. Er priorisiert Maßnahmen, zeigt Einsparpotenziale auf und sichert Ihnen den 5 %-iSFP-Bonus auf spätere BAFA-Förderungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "In welchem Gebiet bieten Sie Energieberatung an?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mein Einzugsgebiet umfasst Schlüchtern, den gesamten Main-Kinzig-Kreis sowie Frankfurt am Main und das Rhein-Main-Gebiet. Auf Anfrage berate ich auch in angrenzenden Regionen Hessens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bin ich verpflichtet, einen BAFA-Energieberater zu beauftragen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für die meisten Förderprogramme von BAFA und KfW ist die Einbindung eines zertifizierten Energie-Effizienz-Experten (gelistet in der dena-Expertenliste) Pflicht. Als BAFA-gelisteter Experte erfülle ich diese Voraussetzung und übernehme auch die fachliche Antragsbegleitung."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header>
       <div class="header-inner">
         <a href="index.html">
-          <img src="espanol.png" alt="Energieberater Ramirez - BAFA zertifizierter Energieberater Schlüchtern" class="logo" width="1024" height="1536" fetchpriority="high">
+          <picture>
+            <source srcset="espanol.webp" type="image/webp">
+            <img src="espanol.png" alt="Energieberater Ramirez - BAFA zertifizierter Energieberater Schlüchtern" class="logo" width="1024" height="1536" fetchpriority="high">
+          </picture>
         </a>
         
         <!-- Hamburger Menu Button -->
@@ -222,10 +367,19 @@
           <div class="about-intro-container">
             <div class="about-intro-content">
               <div class="about-intro-image">
-                <img src="ramirez.jpg" alt="Jairo Ramirez - BAFA zertifizierter Energieberater aus Schlüchtern mit 30+ Jahren Erfahrung" class="about-intro-photo" width="1080" height="1620" loading="lazy" decoding="async">
+                <picture>
+                  <source srcset="ramirez.webp" type="image/webp">
+                  <img src="ramirez.jpg" alt="Jairo Ramirez - BAFA zertifizierter Energieberater aus Schlüchtern mit 30+ Jahren Erfahrung" class="about-intro-photo" width="1080" height="1620" loading="lazy" decoding="async">
+                </picture>
                 <div class="about-intro-badges">
-                  <img src="gih.png" alt="GIH Mitglied - Bundesverband Gebäudeenergieberater Ingenieure Handwerker" class="about-intro-badge" width="6128" height="2274" loading="lazy" decoding="async">
-                  <img src="dena.jpg" alt="DENA Zertifikat - Deutsche Energie-Agentur Qualifikation" class="about-intro-badge" width="965" height="234" loading="lazy" decoding="async">
+                  <picture>
+                    <source srcset="gih.webp" type="image/webp">
+                    <img src="gih.png" alt="GIH Mitglied - Bundesverband Gebäudeenergieberater Ingenieure Handwerker" class="about-intro-badge" width="6128" height="2274" loading="lazy" decoding="async">
+                  </picture>
+                  <picture>
+                    <source srcset="dena.webp" type="image/webp">
+                    <img src="dena.jpg" alt="DENA Zertifikat - Deutsche Energie-Agentur Qualifikation" class="about-intro-badge" width="965" height="234" loading="lazy" decoding="async">
+                  </picture>
                 </div>
               </div>
               <div class="about-intro-text">
@@ -251,10 +405,19 @@
               <div class="expert-photo-bg"></div>
               <div class="expert-header">
                 <div class="expert-left">
-                  <img src="ramirez.jpg" alt="Jairo Ramirez" class="expert-photo" width="1080" height="1620" loading="lazy" decoding="async">
+                  <picture>
+                    <source srcset="ramirez.webp" type="image/webp">
+                    <img src="ramirez.jpg" alt="Jairo Ramirez" class="expert-photo" width="1080" height="1620" loading="lazy" decoding="async">
+                  </picture>
                   <div class="certification-badges">
-                    <img src="gih.png" alt="GIH Mitglied" class="cert-badge" width="6128" height="2274" loading="lazy" decoding="async">
-                    <img src="dena.jpg" alt="DENA Zertifikat" class="cert-badge" width="965" height="234" loading="lazy" decoding="async">
+                    <picture>
+                      <source srcset="gih.webp" type="image/webp">
+                      <img src="gih.png" alt="GIH Mitglied" class="cert-badge" width="6128" height="2274" loading="lazy" decoding="async">
+                    </picture>
+                    <picture>
+                      <source srcset="dena.webp" type="image/webp">
+                      <img src="dena.jpg" alt="DENA Zertifikat" class="cert-badge" width="965" height="234" loading="lazy" decoding="async">
+                    </picture>
                   </div>
                 </div>
                 <div class="expert-info">
@@ -1041,7 +1204,10 @@
 
     <footer>
       <div class="footer-inner">
-        <img src="espanol.png" alt="Energieberater Ramirez Logo" class="footer-logo" width="1024" height="1536" loading="lazy" decoding="async" style="height:50px; margin-right:20px;">
+        <picture>
+          <source srcset="espanol.webp" type="image/webp">
+          <img src="espanol.png" alt="Energieberater Ramirez Logo" class="footer-logo" width="1024" height="1536" loading="lazy" decoding="async" style="height:50px; margin-right:20px;">
+        </picture>
         <div class="footer-col footer-address">
           <div>Jairo Ramirez</div>
           <div>Energie-Effizienz-Experte</div>
