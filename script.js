@@ -80,7 +80,7 @@ function closeModal(modalId) {
  * - On nav click: hide hero, show only the selected section.
  */
 document.addEventListener('DOMContentLoaded', function () {
-    const sectionIds = ['ueber-mich', 'leistungen', 'weiterbildungen', 'kontakt'];
+    const sectionIds = ['ueber-mich', 'leistungen', 'weiterbildungen', 'faq', 'kontakt'];
     const sections = sectionIds.map(id => document.getElementById(id));
     const heroSection = document.getElementById('hero');
     const aboutIntroSection = document.getElementById('about-intro');
@@ -209,6 +209,10 @@ document.addEventListener('DOMContentLoaded', function () {
         'weiterbildungen': {
             title: document.getElementById('weiterbildungen')?.dataset.title || 'Weiterbildungen',
             desc: document.getElementById('weiterbildungen')?.dataset.desc || ''
+        },
+        'faq': {
+            title: document.getElementById('faq')?.dataset.title || 'Häufige Fragen',
+            desc: document.getElementById('faq')?.dataset.desc || ''
         },
         'kontakt': {
             title: document.getElementById('kontakt')?.dataset.title || 'Kontakt',
