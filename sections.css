@@ -1,0 +1,95 @@
+/* ============================================================
+   SECTION BACKGROUNDS + SCROLL-SNAP
+   Each section on the homepage gets its own background so the
+   transition between them feels like a deliberate "page change".
+   ============================================================ */
+
+/* ---------- Scroll snapping ---------- */
+/* Soft snapping: the page snaps to the nearest section only when
+   the user lets scrolling slow down. Fast flicks still scroll through
+   freely. Combined with html { scroll-behavior: smooth } this gives
+   a clear "jump to next page" feeling without being aggressive. */
+html {
+  scroll-snap-type: y proximity;
+}
+
+#hero,
+#about-intro,
+#ueber-mich,
+#leistungen,
+#weiterbildungen,
+#faq,
+#kontakt {
+  scroll-snap-align: start;
+}
+
+/* ---------- Each section behaves like a "page" ---------- */
+#about-intro,
+#ueber-mich,
+#leistungen,
+#weiterbildungen,
+#faq,
+#kontakt {
+  min-height: calc(100vh - 140px);
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  #about-intro,
+  #ueber-mich,
+  #leistungen,
+  #weiterbildungen,
+  #faq,
+  #kontakt {
+    min-height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* ---------- Section background palette ----------
+   Brand is blue (#2A5C8B) + orange accent (#FFA040). Palette alternates
+   between cool tints and a warm accent to give each section identity. */
+
+#about-intro {
+  background: #ffffff !important;
+}
+
+#ueber-mich {
+  background: linear-gradient(180deg, #fdf7eb 0%, #f7eccf 100%) !important;
+}
+
+#leistungen {
+  background: linear-gradient(180deg, #eaf1f8 0%, #d8e5f0 100%) !important;
+}
+
+#weiterbildungen {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f5f9 100%) !important;
+}
+
+#faq {
+  background: linear-gradient(180deg, #fef5e8 0%, #fbe9c8 100%) !important;
+}
+
+/* Kontakt is the finale — bold brand blue, white form cards pop on top */
+#kontakt {
+  background: linear-gradient(160deg, #2A5C8B 0%, #1E4A6B 100%) !important;
+  color: #ffffff;
+}
+
+/* Keep the form cards on kontakt readable against the blue background */
+#kontakt .contact-info-card,
+#kontakt .contact-form-wrapper,
+#kontakt .modern-form {
+  color: var(--neutral-darker);
+}
+
+#kontakt .contact-cta p,
+#kontakt .contact-label,
+#kontakt .contact-value {
+  color: var(--neutral-darker);
+}
