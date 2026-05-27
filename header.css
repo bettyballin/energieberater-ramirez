@@ -152,6 +152,86 @@ header {
   box-shadow: 0 4px 12px var(--primary-alpha-20);
 }
 
+/* ---------- Dropdown submenu (Meine Leistungen) ---------- */
+.header-content li.has-submenu {
+  position: relative;
+}
+
+.header-content .submenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 300px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px var(--primary-alpha-20);
+  border: 1px solid var(--primary-alpha-10);
+  padding: 0.4rem;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+  z-index: 1002;
+  display: flex !important;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header-content li.has-submenu:hover > .submenu,
+.header-content li.has-submenu:focus-within > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s;
+}
+
+.header-content .submenu li {
+  width: 100%;
+  border-bottom: none;
+}
+
+.header-content .submenu a {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  background: transparent;
+  border-radius: 8px;
+  white-space: nowrap;
+  text-align: left;
+  transform: none;
+  box-shadow: none;
+}
+
+.header-content .submenu a:hover,
+.header-content .submenu a:focus {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: none;
+  box-shadow: none;
+}
+
+/* Caret on the parent menu item */
+.header-content li.has-submenu > a::after {
+  content: ' ▾';
+  font-size: 0.7em;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.header-content li.has-submenu:hover > a::after,
+.header-content li.has-submenu:focus-within > a::after {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
 /* Hamburger Menu Styles */
 .hamburger-menu {
   display: none;
@@ -275,7 +355,38 @@ header {
     transform: none;
     box-shadow: none;
   }
-  
+
+  /* Submenu collapses into an indented inline list on mobile */
+  .header-content .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: var(--primary-alpha-10);
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    min-width: 0;
+    width: 100%;
+  }
+  .header-content .submenu a {
+    padding: 0.75rem 2rem 0.75rem 3rem;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    white-space: normal;
+  }
+  .header-content .submenu a:hover,
+  .header-content .submenu a:focus {
+    background: var(--primary-color);
+    color: var(--white);
+  }
+  .header-content li.has-submenu > a::after {
+    /* No rotating caret on mobile — submenu is always visible */
+    display: none;
+  }
+
   /* Mobile overlay */
   .mobile-overlay {
     position: fixed;
