@@ -159,8 +159,9 @@ header {
 
 .header-content .submenu {
   position: absolute;
-  top: calc(100% + 6px);
+  top: 100%;
   left: 0;
+  margin-top: 14px;
   min-width: 300px;
   background: var(--white);
   border-radius: 12px;
@@ -168,23 +169,37 @@ header {
   border: 1px solid var(--primary-alpha-10);
   padding: 0.4rem;
   list-style: none;
-  margin: 0;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
-  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
-  z-index: 1002;
+  transition: opacity 0.18s ease, visibility 0s linear 0.18s;
+  z-index: 9999;
   display: flex !important;
   flex-direction: column;
   gap: 2px;
+}
+
+/* Invisible bridge so the dropdown doesn't collapse while the cursor
+   moves from the menu link to the dropdown */
+.header-content li.has-submenu::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 16px;
+  pointer-events: none;
+}
+
+.header-content li.has-submenu:hover::after,
+.header-content li.has-submenu:focus-within::after {
+  pointer-events: auto;
 }
 
 .header-content li.has-submenu:hover > .submenu,
 .header-content li.has-submenu:focus-within > .submenu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
-  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s;
+  transition: opacity 0.18s ease, visibility 0s;
 }
 
 .header-content .submenu li {
