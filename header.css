@@ -60,7 +60,7 @@ header {
 }
 
 .logo {
-  height: 115px;
+  height: 100px;
   width: auto;
   border-radius: 3px;
   background: transparent;
@@ -73,8 +73,8 @@ header {
 }
 
 .logo-large {
-  height: 125px !important;
-  margin-top: 0;
+  height: 110px !important;
+  margin-top: 5px;
 }
 
 .logo:hover,
