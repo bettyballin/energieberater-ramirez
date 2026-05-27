@@ -1,25 +1,49 @@
 /* ============================================================
-   SECTION BACKGROUNDS + SCROLL-SNAP
-   Each section on the homepage gets its own background so the
-   transition between them feels like a deliberate "page change".
+   SECTION BACKGROUNDS + SPACING
+   Neutral white-and-grey palette. Sections size to their content
+   with generous (but not excessive) breathing room.
    ============================================================ */
 
-/* ---------- Each section behaves like a "page" ---------- */
-/* Scroll snapping disabled — relying on html { scroll-behavior: smooth }
-   in base.css for gentle smooth-scroll on nav clicks, without any forced
-   snap during manual scrolling. */
+/* ---------- Reset legacy "card-block" section styling ----------
+   Older per-section CSS gave each section margin, border-radius and
+   a fixed white background, which made sections look like floating
+   cards with strange gaps between them. Strip that on the homepage
+   so backgrounds meet edge-to-edge. */
+main {
+  padding: 0 !important;
+}
+
 #about-intro,
 #ueber-mich,
 #leistungen,
 #weiterbildungen,
 #faq,
 #kontakt {
-  min-height: calc(100vh - 140px);
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  min-height: 0 !important;
+}
+
+/* The old #ueber-mich rule forced the entire section into solid
+   primary blue with white text. With the new neutral background the
+   text would become invisible — restore default dark text colour. */
+#ueber-mich {
+  color: var(--neutral-darker);
+}
+
+/* ---------- Vertical rhythm ----------
+   No forced min-height — that was creating big empty bands on short
+   sections. Sections grow to fit their content; padding gives the
+   visual gap between them. */
+#about-intro,
+#ueber-mich,
+#leistungen,
+#weiterbildungen,
+#faq,
+#kontakt {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 @media (max-width: 768px) {
@@ -29,51 +53,35 @@
   #weiterbildungen,
   #faq,
   #kontakt {
-    min-height: auto;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 }
 
-/* ---------- Section background palette ----------
-   Brand is blue (#2A5C8B) + orange accent (#FFA040). Palette alternates
-   between cool tints and a warm accent to give each section identity. */
+/* ---------- Backgrounds: alternating white <-> light grey ----------
+   Subtle, neutral, never colourful. The shift in shade tells the eye
+   "new section" without shouting. */
 
 #about-intro {
   background: #ffffff !important;
 }
 
 #ueber-mich {
-  background: linear-gradient(180deg, #faf3f0 0%, #efe1dc 100%) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #eef0f3 100%) !important;
 }
 
 #leistungen {
-  background: linear-gradient(180deg, #eaf1f8 0%, #d8e5f0 100%) !important;
+  background: linear-gradient(180deg, #eef0f3 0%, #ffffff 100%) !important;
 }
 
 #weiterbildungen {
-  background: linear-gradient(180deg, #ffffff 0%, #f3f5f9 100%) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #eef0f3 100%) !important;
 }
 
 #faq {
-  background: linear-gradient(180deg, #fef5e8 0%, #fbe9c8 100%) !important;
+  background: linear-gradient(180deg, #eef0f3 0%, #ffffff 100%) !important;
 }
 
-/* Kontakt is the finale — bold brand blue, white form cards pop on top */
 #kontakt {
-  background: linear-gradient(160deg, #2A5C8B 0%, #1E4A6B 100%) !important;
-  color: #ffffff;
-}
-
-/* Keep the form cards on kontakt readable against the blue background */
-#kontakt .contact-info-card,
-#kontakt .contact-form-wrapper,
-#kontakt .modern-form {
-  color: var(--neutral-darker);
-}
-
-#kontakt .contact-cta p,
-#kontakt .contact-label,
-#kontakt .contact-value {
-  color: var(--neutral-darker);
+  background: linear-gradient(180deg, #ffffff 0%, #e6e9ee 100%) !important;
 }
