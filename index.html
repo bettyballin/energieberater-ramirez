@@ -48,15 +48,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preload" as="image" href="schriften.webp" type="image/webp" fetchpriority="high">
 
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="hero.css">
-    <link rel="stylesheet" href="ueber-mich.css">
-    <link rel="stylesheet" href="leistungen.css">
-    <link rel="stylesheet" href="kontakt.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="weiterbildungen.css">
-    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="styles.min.css">
 
     <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script defer>window.addEventListener('DOMContentLoaded', function() { if (window.emailjs) emailjs.init("F83ljz72RtOi48eV9"); });</script>
@@ -312,7 +304,7 @@
 <body>
     <header>
       <div class="header-inner">
-        <a href="index.html">
+        <a href="#">
           <picture>
             <source srcset="espanol.webp" type="image/webp">
             <img src="espanol.png" alt="Energieberater Ramirez - BAFA zertifizierter Energieberater Schlüchtern" class="logo" width="1024" height="1536" fetchpriority="high">
@@ -329,7 +321,7 @@
         <div class="header-content" id="headerContent">
             <nav>
                 <ul>
-                    <li><a href="/">Startseite</a></li>
+                    <li><a href="#">Startseite</a></li>
                     <li><a href="#ueber-mich">Über Mich</a></li>
                     <li><a href="#leistungen">Meine Leistungen</a></li>
                     <li><a href="#weiterbildungen">Weiterbildungen</a></li>
@@ -612,12 +604,12 @@
                 </div>
                 <div class="services-list">
                   <div class="service-item">
-                    <h4>Vor-Ort-Energieberatung</h4>
-                    <p>Umfassende Gebäudebegehung mit Erfassung aller relevanten Daten zu Baukörper und Anlagentechnik. Ergebnis ist ein Kurzprotokoll mit ersten Handlungsempfehlungen für mehr Energieeffizienz.</p>
+                    <h4><a href="energieberatung-schluechtern.html">Vor-Ort-Energieberatung</a></h4>
+                    <p>Umfassende Gebäudebegehung mit Erfassung aller relevanten Daten zu Baukörper und Anlagentechnik. Ergebnis ist ein Kurzprotokoll mit ersten Handlungsempfehlungen für mehr Energieeffizienz. <a href="energieberatung-schluechtern.html">Mehr erfahren →</a></p>
                   </div>
                   <div class="service-item">
-                    <h4>Individueller Sanierungsfahrplan (iSFP)</h4>
-                    <p>Detaillierte Planung von Sanierungsmaßnahmen mit Priorisierung und zeitlicher Einordnung. Enthält auch Hinweise auf zusätzliche Fördermöglichkeiten.</p>
+                    <h4><a href="sanierungsfahrplan-isfp.html">Individueller Sanierungsfahrplan (iSFP)</a></h4>
+                    <p>Detaillierte Planung von Sanierungsmaßnahmen mit Priorisierung und zeitlicher Einordnung. Enthält auch Hinweise auf zusätzliche Fördermöglichkeiten. <a href="sanierungsfahrplan-isfp.html">Mehr erfahren →</a></p>
                   </div>
                 </div>
               </div>
@@ -632,8 +624,8 @@
                 </div>
                  <div class="services-list">
                   <div class="service-item">
-                    <h4>Energieausweis</h4>
-                    <p>Ausstellung als Verbrauchs- oder Bedarfsausweis – rechtskonform und aussagekräftig.</p>
+                    <h4><a href="energieausweis-schluechtern.html">Energieausweis</a></h4>
+                    <p>Ausstellung als Verbrauchs- oder Bedarfsausweis – rechtskonform und aussagekräftig. <a href="energieausweis-schluechtern.html">Mehr erfahren →</a></p>
                   </div>
                   <div class="service-item">
                     <h4>Baubegleitung</h4>
@@ -653,8 +645,8 @@
                 </div>
                 <div class="services-list">
                   <div class="service-item">
-                    <h4>Fördermittelberatung (BAFA/KfW)</h4>
-                    <p>Analyse, welche Förderprogramme für Einzelmaßnahmen oder Effizienzhäuser in Frage kommen. Einschließlich Abwägung zwischen Zuschuss- und Kreditvariante.</p>
+                    <h4><a href="foerdermittelberatung-bafa-kfw.html">Fördermittelberatung (BAFA/KfW)</a></h4>
+                    <p>Analyse, welche Förderprogramme für Einzelmaßnahmen oder Effizienzhäuser in Frage kommen. Einschließlich Abwägung zwischen Zuschuss- und Kreditvariante. <a href="foerdermittelberatung-bafa-kfw.html">Mehr erfahren →</a></p>
                   </div>
                   <div class="service-item">
                     <h4>Antragstellung & Nachweise</h4>
@@ -781,7 +773,7 @@
                     <div class="documents-grid">
                         <div class="document-card">
                             <div class="document-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14,2 14,8 20,8"></polyline>
                                     <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -793,7 +785,7 @@
                             <p>Zertifikat der Universität Kassel über die erfolgreich abgeschlossene Prüfung zum Anlageplaner für erneuerbare Energien.</p>
                             <a href="docs/Anlageplaner erneuerbare Energien.pdf" target="_blank" class="document-link">
                                 Zertifikat ansehen
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M7 17L17 7"></path>
                                     <path d="M7 7h10v10"></path>
                                 </svg>
@@ -802,7 +794,7 @@
 
                         <div class="document-card">
                             <div class="document-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14,2 14,8 20,8"></polyline>
                                     <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -814,7 +806,7 @@
                             <p>Nachweis über die Qualifikation zur professionellen Energieberatung und die Berechtigung zur Durchführung von Energieberatungen.</p>
                             <a href="docs/Energieberatung.pdf" target="_blank" class="document-link">
                                 Nachweis ansehen
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M7 17L17 7"></path>
                                     <path d="M7 7h10v10"></path>
                                 </svg>
@@ -823,7 +815,7 @@
 
                         <div class="document-card">
                             <div class="document-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14,2 14,8 20,8"></polyline>
                                     <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -835,7 +827,7 @@
                             <p>Qualifikationsnachweis für die Erstellung individueller Sanierungsfahrpläne als wichtiges Beratungsinstrument.</p>
                             <a href="docs/Individueller Sanierungsfahrplan ISFP.pdf" target="_blank" class="document-link">
                                 Zertifikat ansehen
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M7 17L17 7"></path>
                                     <path d="M7 7h10v10"></path>
                                 </svg>
@@ -844,7 +836,7 @@
 
                         <div class="document-card">
                             <div class="document-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14,2 14,8 20,8"></polyline>
                                     <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -856,7 +848,7 @@
                             <p>Fortbildungsnachweis über Innendämmungssysteme, bauphysikalische Grundlagen und fachgerechte Ausführung.</p>
                             <a href="docs/Innendämmung.pdf" target="_blank" class="document-link">
                                 Nachweis ansehen
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M7 17L17 7"></path>
                                     <path d="M7 7h10v10"></path>
                                 </svg>
@@ -865,7 +857,7 @@
 
                         <div class="document-card">
                             <div class="document-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14,2 14,8 20,8"></polyline>
                                     <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -877,7 +869,7 @@
                             <p>Schulungsnachweis über Lüftungskonzepte, Planung und Dimensionierung von Wohnraumlüftungsanlagen.</p>
                             <a href="docs/Lüftungsanlagen im Wohnungsbau.pdf" target="_blank" class="document-link">
                                 Nachweis ansehen
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M7 17L17 7"></path>
                                     <path d="M7 7h10v10"></path>
                                 </svg>
@@ -886,7 +878,7 @@
                             <!-- New document cards inserted below -->
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -898,7 +890,7 @@
                                 <p>Fachnachweis für die Energieberatung und Bewertung von Nichtwohngebäuden.</p>
                                 <a href="docs/Nichtwohngebäude.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
@@ -906,7 +898,7 @@
                             </div>
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -918,7 +910,7 @@
                                 <p>Nachweis über die Qualifikation zur Planung und Bewertung von Photovoltaikanlagen.</p>
                                 <a href="docs/Photovoltaik.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
@@ -926,7 +918,7 @@
                             </div>
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -938,7 +930,7 @@
                                 <p>Fortbildungsnachweis zur solaren Klimatisierung und deren Anwendung in Gebäuden.</p>
                                 <a href="docs/solare Klimatisierung.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
@@ -946,7 +938,7 @@
                             </div>
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -958,7 +950,7 @@
                                 <p>Nachweis über die Planung und Auslegung von Solarthermieanlagen.</p>
                                 <a href="docs/Solarthermie.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
@@ -966,7 +958,7 @@
                             </div>
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -978,7 +970,7 @@
                                 <p>Nachweis für Berechnungen und Nachweise zum sommerlichen Wärmeschutz gemäß DIN 4108-2.</p>
                                 <a href="docs/sommerlicher Wärmeschutz.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
@@ -986,7 +978,7 @@
                             </div>
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -998,7 +990,7 @@
                                 <p>Nachweis für die Analyse und Berechnung von Wärmebrücken in Gebäuden.</p>
                                 <a href="docs/Wärmebrücken.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
@@ -1006,7 +998,7 @@
                             </div>
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -1018,7 +1010,7 @@
                                 <p>Nachweis für die Planung und Auslegung von Wärmepumpenanlagen.</p>
                                 <a href="docs/Wärmepumpen.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
@@ -1026,7 +1018,7 @@
                             </div>
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -1038,7 +1030,7 @@
                                 <p>Studiennachweis für das weiterbildende Studium Energie und Umwelt an der Universität Kassel.</p>
                                 <a href="docs/weiterbildendes Studium Energie und Umwelt.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
@@ -1046,7 +1038,7 @@
                             </div>
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -1058,7 +1050,7 @@
                                 <p>Fachnachweis für die Energieberatung und Bewertung von Wohngebäuden.</p>
                                 <a href="docs/Wohngebäude.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
@@ -1066,7 +1058,7 @@
                             </div>
                             <div class="document-card">
                                 <div class="document-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14,2 14,8 20,8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -1078,13 +1070,63 @@
                                 <p>Nachweis für die Anwendung von WUFI zur hygrothermischen Simulation von Baukonstruktionen.</p>
                                 <a href="docs/WUFI hygrothermische Simulation.pdf" target="_blank" class="document-link">
                                     Nachweis ansehen
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 17L17 7"></path>
                                         <path d="M7 7h10v10"></path>
                                     </svg>
                                 </a>
                             </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" data-title="Häufige Fragen" data-desc="Antworten auf die wichtigsten Fragen zur Energieberatung, Fördermitteln und Sanierungsplanung.">
+            <div class="faq-container">
+                <h2 class="faq-heading">Häufig gestellte Fragen</h2>
+                <p class="faq-intro">Die wichtigsten Antworten rund um Energieberatung, BAFA- und KfW-Förderung, Energieausweis und Sanierungsfahrplan.</p>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-question">Was kostet eine Energieberatung in Schlüchtern oder Frankfurt?</summary>
+                        <div class="faq-answer">
+                            <p>Die Kosten richten sich nach Umfang und Gebäudegröße. Für einen <strong>individuellen Sanierungsfahrplan (iSFP)</strong> übernimmt die BAFA bis zu <strong>50 %</strong> der förderfähigen Beratungskosten — bei Ein- und Zweifamilienhäusern maximal <strong>650 €</strong>, bei Wohngebäuden ab drei Einheiten bis zu <strong>850 €</strong>. Ich erstelle Ihnen vorab ein unverbindliches Festpreisangebot, damit Sie volle Kostentransparenz haben.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Welche Fördermittel gibt es für eine energetische Sanierung?</summary>
+                        <div class="faq-answer">
+                            <p>Bund und Länder fördern energetische Sanierungen vor allem über zwei Schienen:</p>
+                            <ul>
+                                <li><strong>BAFA</strong> — Bundesförderung für effiziente Gebäude (Einzelmaßnahmen wie Dämmung, Fenster, Heizungstausch)</li>
+                                <li><strong>KfW</strong> — Bundesförderung für effiziente Gebäude / Wohngebäude (Kredit 261 für Komplettsanierungen zum Effizienzhaus)</li>
+                            </ul>
+                            <p>Mit einem iSFP erhalten Sie zusätzlich den <strong>iSFP-Bonus von 5 %</strong> auf förderfähige Maßnahmen. Ich prüfe für Ihr Projekt alle in Frage kommenden Programme inklusive regionaler Zuschüsse.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Wie lange dauert die Ausstellung eines Energieausweises?</summary>
+                        <div class="faq-answer">
+                            <p>Ein <strong>Verbrauchsausweis</strong> liegt in der Regel innerhalb von 1–2 Wochen vor, sobald alle Verbrauchsdaten der letzten drei Jahre vorliegen. Ein <strong>Bedarfsausweis</strong> erfordert eine Vor-Ort-Aufnahme und ist meist innerhalb von 3–4 Wochen fertiggestellt — je nach Komplexität des Gebäudes.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Was ist ein individueller Sanierungsfahrplan (iSFP)?</summary>
+                        <div class="faq-answer">
+                            <p>Der iSFP ist ein vom BMWK gefördertes Beratungsinstrument. Auf Basis einer Vor-Ort-Begehung Ihres Gebäudes entsteht ein <strong>schrittweiser Sanierungsplan</strong>, der Maßnahmen priorisiert, Einsparpotenziale beziffert und sinnvolle Maßnahmenpakete bildet. Zusätzlich sichern Sie sich damit den <strong>5 %-iSFP-Bonus</strong> auf spätere BAFA-Einzelförderungen.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">In welchem Gebiet bieten Sie Energieberatung an?</summary>
+                        <div class="faq-answer">
+                            <p>Mein Einzugsgebiet umfasst <strong>Schlüchtern, den gesamten Main-Kinzig-Kreis</strong> sowie <strong>Frankfurt am Main</strong> und das Rhein-Main-Gebiet. Auf Anfrage berate ich auch in angrenzenden Regionen Hessens — sprechen Sie mich gerne an.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">Bin ich verpflichtet, einen BAFA-Energieberater zu beauftragen?</summary>
+                        <div class="faq-answer">
+                            <p>Für die meisten Förderprogramme von <strong>BAFA und KfW</strong> ist die Einbindung eines <strong>zertifizierten Energie-Effizienz-Experten</strong> (gelistet in der dena-Expertenliste) Pflicht. Als BAFA-gelisteter Experte erfülle ich diese Voraussetzung und übernehme auch die fachliche Antragsbegleitung und die Bestätigung nach Durchführung (BnD).</p>
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -1097,7 +1139,7 @@
                     </div>
                     <div class="contact-info-items">
                         <div class="contact-info-item">
-                            <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg aria-hidden="true" focusable="false" class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                             <div>
@@ -1106,7 +1148,7 @@
                             </div>
                         </div>
                         <div class="contact-info-item">
-                            <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg aria-hidden="true" focusable="false" class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
@@ -1116,7 +1158,7 @@
                             </div>
                         </div>
                         <div class="contact-info-item">
-                            <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg aria-hidden="true" focusable="false" class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
@@ -1132,7 +1174,7 @@
                     <form id="contactForm" class="modern-form">
               <div class="form-group">
                 <label for="name" class="form-label">
-                  <svg class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg aria-hidden="true" focusable="false" class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
                   </svg>
@@ -1144,7 +1186,7 @@
               
               <div class="form-group">
                 <label for="email" class="form-label">
-                  <svg class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg aria-hidden="true" focusable="false" class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
@@ -1156,7 +1198,7 @@
               
               <div class="form-group">
                 <label for="message" class="form-label" data-key="message">
-                  <svg class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg aria-hidden="true" focusable="false" class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                   </svg>
                   <span data-key="messageLabel">Nachricht</span>
@@ -1168,7 +1210,7 @@
               <div class="form-submit">
                 <button type="submit" data-key="send" class="submit-button">
                   <span class="button-text" data-key="sendBtn">Nachricht senden</span>
-                  <svg class="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg aria-hidden="true" focusable="false" class="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
                   </svg>
@@ -1192,7 +1234,7 @@
             </div>
             <div class="contact-banner-cta">
                 <a href="#kontakt" class="contact-banner-button">
-                    <svg class="contact-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg aria-hidden="true" focusable="false" class="contact-banner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
