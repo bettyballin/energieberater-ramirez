@@ -58,6 +58,32 @@ body {
   color: var(--neutral-darker);
   overscroll-behavior-y: none;
 }
+/* Smooth in-page navigation for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset section anchors so they don't disappear behind the sticky header */
+section[id],
+#hero,
+#about-intro {
+  scroll-margin-top: 150px;
+}
+
+@media (max-width: 768px) {
+  section[id],
+  #hero,
+  #about-intro {
+    scroll-margin-top: 80px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .hidden-section {
   display: none !important;
 }

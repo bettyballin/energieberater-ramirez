@@ -75,15 +75,12 @@ function closeModal(modalId) {
 }
 
 /**
- * Section toggling and smooth scrolling
- * - On load: show only hero section, hide all others.
- * - On nav click: hide hero, show only the selected section.
+ * Page interactions
+ * - Smooth-scroll to anchor sections (CSS handles the actual scroll behaviour)
+ * - Hamburger menu, modal overlays, contact form submission
+ * - Logo shrinks when the page scrolls
  */
 document.addEventListener('DOMContentLoaded', function () {
-    const sectionIds = ['ueber-mich', 'leistungen', 'weiterbildungen', 'faq', 'kontakt'];
-    const sections = sectionIds.map(id => document.getElementById(id));
-    const heroSection = document.getElementById('hero');
-    const aboutIntroSection = document.getElementById('about-intro');
     const logo = document.querySelector('.logo');
 
     // Hamburger Menu Functionality
@@ -155,96 +152,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // On load: hide all sections except hero, show about-intro
-    sections.forEach(section => section.classList.add('hidden-section'));
-    if (heroSection) heroSection.classList.remove('hidden-section');
-    if (aboutIntroSection) aboutIntroSection.classList.remove('hidden-section');
+    // Anchor links use native smooth scrolling via the html { scroll-behavior: smooth } CSS rule.
 
-    // Add click event to nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href').replace('#', '');
-            if (sectionIds.includes(targetId)) {
-                e.preventDefault();
-                // Hide hero and about-intro, show only the clicked section
-                if (heroSection) heroSection.classList.add('hidden-section');
-                if (aboutIntroSection) aboutIntroSection.classList.add('hidden-section');
-                sections.forEach(section => {
-                    if (section.id === targetId) section.classList.remove('hidden-section');
-                    else section.classList.add('hidden-section');
-                });
-                // Scroll to top of page when navigating to a section
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (targetId === '' || targetId === 'hero') {
-                // "Startseite" clicked: show hero and about-intro, hide all others
-                e.preventDefault();
-                if (heroSection) heroSection.classList.remove('hidden-section');
-                if (aboutIntroSection) aboutIntroSection.classList.remove('hidden-section');
-                sections.forEach(section => section.classList.add('hidden-section'));
-                // Scroll to top when returning to homepage
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
-    });
-
-    // --- Intro Banner Dynamic Update ---
-    const introBanner = document.querySelector('.intro-banner');
-    const introTitle = introBanner ? introBanner.querySelector('.intro-title') : null;
-    const introDesc = introBanner ? introBanner.querySelector('.intro-desc') : null;
-
-    // Section info map for fallback
-    const sectionInfo = {
-        'hero': {
-            title: '',
-            desc: ''
-        },
-        'ueber-mich': {
-            title: document.getElementById('ueber-mich')?.dataset.title || 'Über Mich',
-            desc: document.getElementById('ueber-mich')?.dataset.desc || ''
-        },
-        'leistungen': {
-            title: document.getElementById('leistungen')?.dataset.title || 'Leistungen',
-            desc: document.getElementById('leistungen')?.dataset.desc || ''
-        },
-        'weiterbildungen': {
-            title: document.getElementById('weiterbildungen')?.dataset.title || 'Weiterbildungen',
-            desc: document.getElementById('weiterbildungen')?.dataset.desc || ''
-        },
-        'faq': {
-            title: document.getElementById('faq')?.dataset.title || 'Häufige Fragen',
-            desc: document.getElementById('faq')?.dataset.desc || ''
-        },
-        'kontakt': {
-            title: document.getElementById('kontakt')?.dataset.title || 'Kontakt',
-            desc: document.getElementById('kontakt')?.dataset.desc || ''
-        }
-    };
-
-    function updateIntroBanner(sectionId) {
-        if (!introBanner || !introTitle || !introDesc) return;
-        if (sectionId === 'hero') {
-            introBanner.style.display = 'none';
-        } else {
-            introBanner.style.display = '';
-            const info = sectionInfo[sectionId];
-            introTitle.textContent = info.title;
-            introDesc.textContent = info.desc;
-        }
-    }
-
-    // On nav click, update banner
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href').replace('#', '');
-            if (sectionIds.includes(targetId)) {
-                updateIntroBanner(targetId);
-            }
-        });
-    });
-
-    // On load, show Startseite
-    updateIntroBanner('hero');
-      
     // EmailJS integration for contact form
     const form = document.getElementById('contactForm');
     const statusDiv = document.getElementById('status');
