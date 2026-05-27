@@ -4,26 +4,10 @@
    transition between them feels like a deliberate "page change".
    ============================================================ */
 
-/* ---------- Scroll snapping ---------- */
-/* Soft snapping: the page snaps to the nearest section only when
-   the user lets scrolling slow down. Fast flicks still scroll through
-   freely. Combined with html { scroll-behavior: smooth } this gives
-   a clear "jump to next page" feeling without being aggressive. */
-html {
-  scroll-snap-type: y proximity;
-}
-
-#hero,
-#about-intro,
-#ueber-mich,
-#leistungen,
-#weiterbildungen,
-#faq,
-#kontakt {
-  scroll-snap-align: start;
-}
-
 /* ---------- Each section behaves like a "page" ---------- */
+/* Scroll snapping disabled — relying on html { scroll-behavior: smooth }
+   in base.css for gentle smooth-scroll on nav clicks, without any forced
+   snap during manual scrolling. */
 #about-intro,
 #ueber-mich,
 #leistungen,
@@ -60,7 +44,7 @@ html {
 }
 
 #ueber-mich {
-  background: linear-gradient(180deg, #fdf7eb 0%, #f7eccf 100%) !important;
+  background: linear-gradient(180deg, #faf3f0 0%, #efe1dc 100%) !important;
 }
 
 #leistungen {
