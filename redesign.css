@@ -502,18 +502,22 @@ body.redesign #warum {
   z-index: 2;
 }
 
-.warum-badge-icon {
-  height: 30px;
-  border-radius: 4px;
-  background: #fff;
+.warum-badge-icons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.55rem;
   flex-shrink: 0;
+  padding: 0.15rem 0.2rem;
+  border-right: 1px solid var(--rd-border);
+  padding-right: 0.7rem;
 }
 
-.warum-badge-icon img,
-.warum-badge-icon picture {
+.warum-badge-icons picture {
+  display: block;
+  height: 28px;
+}
+
+.warum-badge-icons img {
   height: 100%;
   width: auto;
   display: block;
