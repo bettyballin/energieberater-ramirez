@@ -23,35 +23,52 @@
     }
     </script>
 </head>
-<body>
+<body class="redesign">
     <header>
-        <div class="header-inner">
-            <a href="index.html">
-                <picture>
-                    <source srcset="logo.webp" type="image/webp">
-                    <img src="logo.png" alt="Energieberater Ramirez - BAFA zertifizierter Energieberater Schlüchtern" class="logo" width="1127" height="837">
-                </picture>
-            </a>
-            <div class="header-content">
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Startseite</a></li>
-                        <li class="has-submenu">
-                            <a href="index.html#leistungen" aria-haspopup="true">Leistungen</a>
-                            <ul class="submenu" role="menu">
-                                <li><a href="energieberatung-schluechtern.html">Vor-Ort-Energieberatung</a></li>
-                                <li><a href="energieausweis-schluechtern.html">Energieausweis</a></li>
-                                <li><a href="sanierungsfahrplan-isfp.html">Sanierungsfahrplan (iSFP)</a></li>
-                                <li><a href="foerdermittelberatung-bafa-kfw.html">Fördermittelberatung BAFA/KfW</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="index.html#warum">Über mich</a></li>
-                        <li><a href="index.html#kontakt">Kontakt</a></li>
-                    </ul>
-                </nav>
+      <div class="header-inner">
+        <a href="index.html" class="logo-link" aria-label="Energieberater Ramirez Startseite">
+          <picture>
+            <source srcset="logo.webp" type="image/webp">
+            <img src="logo.png" alt="Energieberater Ramirez - BAFA zertifizierter Energieberater Schlüchtern" class="logo" width="1127" height="837">
+          </picture>
+        </a>
+
+        <button class="hamburger-menu" id="hamburgerMenu" aria-label="Navigation öffnen/schließen">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <div class="header-content" id="headerContent">
+            <nav>
+                <ul>
+                    <li class="has-submenu">
+                        <a href="index.html#leistungen" aria-haspopup="true">Leistungen</a>
+                        <ul class="submenu" role="menu">
+                            <li><a href="energieberatung-schluechtern.html">Vor-Ort-Energieberatung</a></li>
+                            <li><a href="energieausweis-schluechtern.html">Energieausweis</a></li>
+                            <li><a href="sanierungsfahrplan-isfp.html">Sanierungsfahrplan (iSFP)</a></li>
+                            <li><a href="foerdermittelberatung-bafa-kfw.html">Fördermittelberatung BAFA/KfW</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="werdegang.html">Über mich</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:+491607764812" class="header-phone" aria-label="Anrufen">
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>+49 160 7764812</span>
+                </a>
+                <a href="index.html#kontakt" class="cta-button">Jetzt Beraten lassen</a>
             </div>
         </div>
+      </div>
     </header>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <div class="intro-banner">
         <div class="intro-title">Blog &amp; Ratgeber</div>

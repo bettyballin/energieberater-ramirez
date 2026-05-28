@@ -771,6 +771,52 @@ body.redesign #kontakt .kontakt-banner-text > p {
 }
 
 /* ============================================================
+   Sub-page polish — legal-content lists & links
+   Make ul/li in legal-page sections (404, impressum, datenschutz,
+   blog, all per-service pages) look on-brand: green checkmark
+   bullets instead of the default black dots; primary-blue links.
+   ============================================================ */
+body.redesign .legal-content ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+body.redesign .legal-content ul li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.55rem;
+  line-height: 1.55;
+}
+
+body.redesign .legal-content ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.1rem;
+  text-align: center;
+  color: #16a34a;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+body.redesign .legal-content a {
+  color: var(--rd-primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(31, 74, 107, 0.3);
+  text-underline-offset: 2px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+body.redesign .legal-content a:hover,
+body.redesign .legal-content a:focus {
+  color: var(--rd-primary-mid);
+  text-decoration-color: var(--rd-accent);
+  text-decoration-thickness: 2px;
+}
+
+/* ============================================================
    WERDEGANG-Page (werdegang.html) — Vita / full services / certs
    ============================================================ */
 body.redesign .page-hero {
