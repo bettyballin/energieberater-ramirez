@@ -489,42 +489,43 @@ body.redesign #warum {
   width: 100%;
   max-width: 420px;
   aspect-ratio: 1;
-  border-radius: 50%;
-  overflow: hidden;
-  background: linear-gradient(135deg, #f3e8e1, #d8e3ee);
-  box-shadow: var(--rd-shadow-md);
+  overflow: visible;            /* allow badge to extend past the circle */
+  background: transparent;
+  border-radius: 0;
 }
 
+/* Round the actual photo, not the wrapper, so .warum-photo can stay
+   overflow: visible for the badge to break out. */
 .warum-photo picture,
 .warum-photo img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f3e8e1, #d8e3ee);
+  box-shadow: var(--rd-shadow-md);
 }
 
 .warum-badge {
   position: absolute;
-  bottom: 14%;
-  left: 8%;
+  bottom: 12%;
+  left: -14%;                   /* push out of the circle on the left */
   background: #fff;
-  padding: 0.55rem 1rem 0.55rem 0.55rem;
+  padding: 0.85rem 1.4rem 0.85rem 0.85rem;
   border-radius: var(--rd-radius-md);
-  box-shadow: var(--rd-shadow-md);
-  gap: 0.7rem;
+  box-shadow: 0 16px 40px rgba(31, 74, 107, 0.22);
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  z-index: 2;
+  gap: 0.9rem;
+  z-index: 5;                   /* stack above the photo */
 }
 
 .warum-badge-icons {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
   flex-shrink: 0;
-  padding-right: 0.7rem;
-  border-right: 1px solid var(--rd-border);
 }
 
 .warum-badge-icons picture {
@@ -532,37 +533,33 @@ body.redesign #warum {
   align-items: center;
 }
 
-/* Constrain height directly on the <img> — height on <picture>
-   doesn't reliably size the inner image in all browsers. The E
-   sits a touch taller than the wider GIH wordmark so they read
-   as equal visual weight. */
+/* Height set on the <img>, not the <picture> — sized up a touch. */
 .warum-badge-e img {
-  height: 34px;
+  height: 40px;
   width: auto;
   display: block;
 }
 
 .warum-badge-gih img {
-  height: 22px;
+  height: 28px;
   width: auto;
   display: block;
-  font-size: 0.85rem;
 }
 
 .warum-badge-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .warum-badge-name {
   font-weight: 700;
   color: var(--rd-primary);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
 .warum-badge-title {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: #000;
 }
 
