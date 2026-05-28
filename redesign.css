@@ -136,6 +136,15 @@ body.redesign .header-content li.has-submenu > a::after {
   color: #fff;
 }
 
+/* Header CTA stays in the lighter --rd-accent on hover
+   (instead of darkening), to keep the brand orange consistent
+   in the navigation row. */
+body.redesign .header-actions .cta-button:hover,
+body.redesign .header-actions .cta-button:focus {
+  background: var(--rd-accent);
+  color: #fff;
+}
+
 .cta-button.large {
   font-size: 1.05rem;
   padding: 0.9rem 1.6rem;
