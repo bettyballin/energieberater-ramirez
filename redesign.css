@@ -182,7 +182,7 @@ body.redesign #hero.hero-overlay {
   border-radius: 0 !important;
   box-shadow: none !important;
   overflow: hidden !important;
-  height: clamp(380px, 52vh, 540px);
+  height: clamp(440px, 60vh, 620px);
   text-align: left;
 }
 
@@ -222,7 +222,7 @@ body.redesign #hero.hero-overlay {
   margin: 0 auto;
   height: 100%;
   box-sizing: border-box;
-  padding: 3.5rem 2rem 3.5rem 4.5rem;
+  padding: 5.5rem 2rem 5.5rem 4.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
