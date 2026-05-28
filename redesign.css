@@ -607,18 +607,19 @@ body.redesign #kontakt {
   align-items: center;
 }
 
-.kontakt-banner-text h2 {
+body.redesign #kontakt .kontakt-banner-text h2 {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 800;
   margin: 0 0 1rem;
   color: #fff;
 }
 
-.kontakt-banner-text > p {
+body.redesign #kontakt .kontakt-banner-text > p {
   font-size: 1.1rem;
   margin: 0 0 1.75rem;
   opacity: 0.92;
   line-height: 1.5;
+  color: #fff;
 }
 
 .kontakt-actions {
