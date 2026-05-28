@@ -197,6 +197,7 @@ body.redesign #hero.hero-overlay {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 80%;
   display: block;
 }
 
@@ -232,13 +233,19 @@ body.redesign #hero.hero-overlay {
 }
 
 /* Specificity-bumped to defeat #hero p { color: black } and
-   main { text-align: center } from legacy hero.css */
+   main { text-align: center } from legacy hero.css.
+   Uses a rounder system-font stack for a friendlier hero look. */
+body.redesign #hero.hero-overlay .hero-overlay-content h1,
+body.redesign #hero.hero-overlay .hero-overlay-content .hero-subtitle {
+  font-family: 'Avenir Next', 'Avenir', 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
 body.redesign #hero.hero-overlay .hero-overlay-content h1 {
-  font-size: clamp(2.1rem, 4.2vw, 3.3rem);
-  line-height: 1.12;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  margin: 0 0 0.85rem;
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  line-height: 1.18;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6rem;
   color: #fff;
   text-shadow: 0 2px 10px rgba(0,0,0,0.35);
   max-width: 640px;
@@ -247,9 +254,9 @@ body.redesign #hero.hero-overlay .hero-overlay-content h1 {
 
 body.redesign #hero.hero-overlay .hero-overlay-content .hero-subtitle,
 body.redesign #hero.hero-overlay p.hero-subtitle {
-  font-size: clamp(1.05rem, 1.55vw, 1.2rem);
-  line-height: 1.5;
-  margin: 0 0 1.5rem;
+  font-size: clamp(0.95rem, 1.35vw, 1.08rem);
+  line-height: 1.45;
+  margin: 0 0 1rem;
   color: #fff;
   font-weight: 400;
   opacity: 0.95;
