@@ -514,16 +514,24 @@ body.redesign #warum {
 .warum-badge-icons {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.6rem;
   flex-shrink: 0;
-  padding: 0.15rem 0.2rem;
-  border-right: 1px solid var(--rd-border);
   padding-right: 0.7rem;
+  border-right: 1px solid var(--rd-border);
 }
 
 .warum-badge-icons picture {
   display: block;
-  height: 28px;
+}
+
+/* The standalone E sits a touch taller than the wider GIH wordmark
+   so they read as equal visual weight. */
+.warum-badge-e {
+  height: 34px;
+}
+
+.warum-badge-gih {
+  height: 22px;
 }
 
 .warum-badge-icons img {
@@ -542,13 +550,13 @@ body.redesign #warum {
 
 .warum-badge-name {
   font-weight: 700;
-  color: var(--rd-text);
+  color: var(--rd-primary);
   font-size: 0.95rem;
 }
 
 .warum-badge-title {
   font-size: 0.8rem;
-  color: var(--rd-muted);
+  color: #000;
 }
 
 /* ---------- ABLAUF SECTION ---------- */
