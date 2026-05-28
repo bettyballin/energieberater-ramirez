@@ -827,19 +827,35 @@ body.redesign .footer-links {
 }
 
 @media (max-width: 800px) {
+  /* Logo + address share the first row, contact/links stack below */
+  body.redesign .footer-inner {
+    display: grid !important;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo    address"
+      "contact contact"
+      "links   links";
+    gap: 1rem;
+    align-items: start;
+  }
+  body.redesign .footer-inner > picture { grid-area: logo; }
+  body.redesign .footer-address       { grid-area: address; }
+  body.redesign .footer-contact       { grid-area: contact; }
+  body.redesign .footer-links         { grid-area: links; }
+
   body.redesign .footer-address,
   body.redesign .footer-links {
     border: none;
     padding-right: 0;
     padding-left: 0;
   }
-  body.redesign .footer-address {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-    padding-bottom: 1rem;
-  }
   body.redesign .footer-contact {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-    padding-bottom: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding-top: 1rem;
+  }
+  body.redesign .footer-links {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding-top: 1rem;
   }
 }
 
