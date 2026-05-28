@@ -1,0 +1,7 @@
+# Source assets — keep WebP/optimized versions in the repo, not the originals
+hero-haus.png
+
+# Helper / dev outputs
+_pdf_check.txt
+_check.txt
+.claude/
