@@ -364,8 +364,12 @@ body.redesign #leistungen {
 
 /* ---------- WARUM SECTION ---------- */
 body.redesign #warum {
-  background: var(--rd-surface) !important;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)),
+    image-set(url('banner.webp') type('image/webp'), url('banner.png') type('image/png'))
+      center / cover no-repeat !important;
   padding: 5rem 1.5rem !important;
+  position: relative;
 }
 
 .warum-container {
@@ -479,9 +483,10 @@ body.redesign #warum {
   bottom: 14%;
   left: 8%;
   background: #fff;
-  padding: 0.6rem 1rem 0.6rem 0.7rem;
+  padding: 0.55rem 1rem 0.55rem 0.55rem;
   border-radius: var(--rd-radius-md);
   box-shadow: var(--rd-shadow-md);
+  gap: 0.7rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -489,11 +494,10 @@ body.redesign #warum {
 }
 
 .warum-badge-icon {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 36px;
   border-radius: 6px;
-  background: var(--rd-primary);
-  color: #fff;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
