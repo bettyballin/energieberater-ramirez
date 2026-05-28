@@ -4,7 +4,12 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
-      "PowerShell(python generate_seo_report.py)"
+      "PowerShell(python generate_seo_report.py)",
+      "Bash(git checkout *)",
+      "WebFetch(domain:bettyballin.github.io)",
+      "Bash(git stash *)",
+      "Bash(git reset *)",
+      "Bash(git commit *)"
     ]
   }
 }
