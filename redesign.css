@@ -771,6 +771,20 @@ body.redesign #kontakt .kontakt-banner-text > p {
 }
 
 /* ============================================================
+   Footer — subtle blue gradient (brand-mid -> brand-dark)
+   ============================================================ */
+body.redesign footer {
+  background: linear-gradient(180deg, var(--rd-primary-mid) 0%, var(--rd-primary) 70%, #123A5B 100%) !important;
+  color: #fff;
+}
+
+body.redesign .footer-copyright {
+  background: rgba(0, 0, 0, 0.15);
+  margin-top: 1.5rem;
+  border-radius: 0;
+}
+
+/* ============================================================
    Sub-page polish — legal-content lists & links
    Make ul/li in legal-page sections (404, impressum, datenschutz,
    blog, all per-service pages) look on-brand: green checkmark
