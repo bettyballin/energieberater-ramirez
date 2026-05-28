@@ -528,24 +528,24 @@ body.redesign #warum {
 }
 
 .warum-badge-icons picture {
-  display: block;
+  display: inline-flex;
+  align-items: center;
 }
 
-/* The standalone E sits a touch taller than the wider GIH wordmark
-   so they read as equal visual weight. */
-.warum-badge-e {
+/* Constrain height directly on the <img> — height on <picture>
+   doesn't reliably size the inner image in all browsers. The E
+   sits a touch taller than the wider GIH wordmark so they read
+   as equal visual weight. */
+.warum-badge-e img {
   height: 34px;
-}
-
-.warum-badge-gih {
-  height: 22px;
-}
-
-.warum-badge-icons img {
-  height: 100%;
   width: auto;
   display: block;
-  font-weight: 800;
+}
+
+.warum-badge-gih img {
+  height: 22px;
+  width: auto;
+  display: block;
   font-size: 0.85rem;
 }
 
