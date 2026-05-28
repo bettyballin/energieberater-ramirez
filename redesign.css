@@ -848,54 +848,65 @@ body.redesign .page-hero {
   background: #fff;
   border: 1px solid var(--rd-border);
   border-radius: var(--rd-radius-md);
-  padding: 1.5rem 1.5rem 1.25rem;
+  padding: 1.75rem 1.5rem 0.75rem;
   border-top: 4px solid var(--rd-accent);
   box-shadow: var(--rd-shadow-sm);
 }
 
 .vita-service-group h3 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.5rem;
   color: var(--rd-primary);
+  text-align: center;
+  letter-spacing: 0.01em;
 }
 
 .vita-service-group ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
 }
 
 .vita-service-group li {
-  font-size: 0.94rem;
-  line-height: 1.5;
-  color: var(--rd-text-soft);
-  padding-left: 1rem;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rd-border);
 }
 
-.vita-service-group li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.55rem;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--rd-accent);
+.vita-service-group li:last-child {
+  border-bottom: none;
 }
 
-.vita-service-group li strong { color: var(--rd-text); }
-.vita-service-group li a {
+.svc-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--rd-text);
+  line-height: 1.3;
+}
+
+a.svc-name {
+  color: var(--rd-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a.svc-name:hover,
+a.svc-name:focus {
   color: var(--rd-primary-mid);
   text-decoration: underline;
-  text-decoration-color: rgba(42, 92, 139, 0.3);
-  text-underline-offset: 2px;
+  text-decoration-color: var(--rd-accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
 }
-.vita-service-group li a:hover { color: var(--rd-primary); text-decoration-color: var(--rd-primary); }
+
+.svc-desc {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--rd-text-soft);
+}
 
 /* Skills */
 .vita-skills-grid {
@@ -913,10 +924,12 @@ body.redesign .page-hero {
 }
 
 .vita-skill-card h3 {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.95rem;
   color: var(--rd-primary);
+  text-align: center;
+  letter-spacing: 0.01em;
 }
 
 .vita-skill-card ul {
