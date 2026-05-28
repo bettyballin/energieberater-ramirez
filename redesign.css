@@ -507,9 +507,12 @@ body.redesign #warum {
 }
 
 /* Round the actual photo, not the wrapper, so .warum-photo can stay
-   overflow: visible for the badge to break out. */
-.warum-photo picture,
-.warum-photo img {
+   overflow: visible for the badge to break out.
+   Use direct-child selectors so the badge images further down the
+   tree (E and GIH) don't inherit the round clip. */
+.warum-photo > picture,
+.warum-photo > picture > img,
+.warum-photo > img {
   width: 100%;
   height: 100%;
   display: block;
@@ -517,6 +520,12 @@ body.redesign #warum {
   border-radius: 50%;
   background: linear-gradient(135deg, #f3e8e1, #d8e3ee);
   box-shadow: var(--rd-shadow-md);
+}
+
+/* Defensive reset so the badge images keep their natural rectangular
+   shape no matter what other rules say. */
+.warum-badge img {
+  border-radius: 0;
 }
 
 .warum-badge {
