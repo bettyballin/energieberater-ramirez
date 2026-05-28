@@ -221,7 +221,8 @@ body.redesign #hero.hero-overlay {
   max-width: 1240px;
   margin: 0 auto;
   height: 100%;
-  padding: 0 2rem;
+  box-sizing: border-box;
+  padding: 3.5rem 2rem 3.5rem 4.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1439,7 +1440,7 @@ a.info-card:focus {
   body.redesign #hero.hero-overlay {
     height: clamp(360px, 65vh, 520px);
   }
-  .hero-overlay-content { padding: 0 1.25rem; }
+  .hero-overlay-content { padding: 2rem 1.25rem 2rem 1.5rem; }
   .hero-overlay-scrim {
     background: linear-gradient(
       180deg,
