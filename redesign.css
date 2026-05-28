@@ -27,77 +27,6 @@ body.redesign main {
   padding: 0 !important;
 }
 
-/* Header actions: stacked right-side block — top row = phone + lang switcher,
-   bottom row = orange CTA. Mirrors the mockup. */
-body.redesign .header-actions {
-  display: flex !important;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.4rem;
-}
-
-.header-top-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.85rem;
-}
-
-.topbar-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--rd-text-soft);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.15s ease;
-}
-
-.topbar-phone:hover {
-  color: var(--rd-primary);
-}
-
-.topbar-phone svg {
-  width: 14px;
-  height: 14px;
-  stroke: currentColor;
-}
-
-.lang-switcher {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.1rem;
-  background: rgba(31, 74, 107, 0.06);
-  padding: 0.15rem;
-  border-radius: 999px;
-}
-
-.lang-link {
-  padding: 0.18rem 0.55rem;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.72rem;
-  color: var(--rd-text-soft);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.lang-link:hover {
-  color: var(--rd-primary);
-  background: rgba(31, 74, 107, 0.08);
-}
-
-.lang-link.is-active {
-  background: var(--rd-primary);
-  color: #fff;
-}
-
-.lang-link.is-disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-  pointer-events: none;
-}
 
 body.redesign header {
   background: var(--rd-surface) !important;
@@ -800,17 +729,9 @@ body.redesign #kontakt .contact-content {
 
 @media (max-width: 768px) {
   body.redesign .header-content { gap: 0.75rem; }
-  body.redesign .header-actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-    padding: 1rem 1.5rem;
-  }
-  .header-top-row {
-    justify-content: space-between;
-  }
-  .topbar-phone { font-size: 0.95rem; }
-  .cta-button { font-size: 0.95rem; padding: 0.7rem 1rem; text-align: center; }
+  .header-actions { gap: 0.5rem; }
+  .header-phone { display: none; }
+  .cta-button { font-size: 0.9rem; padding: 0.6rem 1rem; }
 
   body.redesign #hero.hero-overlay {
     height: clamp(360px, 65vh, 520px);
