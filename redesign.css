@@ -768,16 +768,18 @@ body.redesign .page-hero {
   font-size: clamp(1.6rem, 2.8vw, 2.2rem);
   font-weight: 800;
   color: var(--rd-text);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
   letter-spacing: -0.01em;
+  text-align: center;
 }
 
 .vita-lead {
   font-size: 1.02rem;
   line-height: 1.55;
   color: var(--rd-text-soft);
-  margin: 0 0 2rem;
+  margin: 0 auto 2rem;
   max-width: 720px;
+  text-align: center;
 }
 
 /* Timeline */
