@@ -1622,11 +1622,25 @@ a.info-card:focus {
     box-shadow: 0 4px 12px rgba(255, 159, 45, 0.30);
   }
 
-  /* Hamburger / close button stays above the drawer and uses
-     brand-blue so the X is always visible against any background. */
+  /* Hamburger / close button — float at top-right of the viewport
+     so it stays visible above the drawer (which has z-index 1000)
+     and the page overlay (z-index 999). The drawer is fixed and
+     escapes the header's stacking context, so we have to float the
+     hamburger the same way to outrank it. */
   body.redesign .hamburger-menu {
-    z-index: 1101;
-    position: relative;
+    position: fixed !important;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+  body.redesign .hamburger-menu.active {
+    background: rgba(255, 255, 255, 0.95);
   }
   body.redesign .hamburger-line,
   body.redesign .hamburger-menu.active .hamburger-line {
