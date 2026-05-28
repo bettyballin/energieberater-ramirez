@@ -703,6 +703,170 @@ body.redesign #kontakt {
   margin-top: 2px;
 }
 
+/* ---------- ÜBER MICH ---------- */
+body.redesign #ueber-mich {
+  background: var(--rd-surface) !important;
+  padding: 4.5rem 1.5rem !important;
+}
+
+.ueber-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.ueber-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem;
+}
+
+.ueber-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rd-accent-dark);
+  margin-bottom: 0.6rem;
+}
+
+.ueber-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--rd-text);
+  margin: 0 0 1rem;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.ueber-lead {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--rd-text-soft);
+  margin: 0;
+}
+
+.ueber-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.ueber-card {
+  background: var(--rd-surface-soft);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--rd-radius-md);
+  padding: 1.75rem 1.5rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.ueber-card:hover {
+  box-shadow: var(--rd-shadow-md);
+  transform: translateY(-3px);
+  border-color: var(--rd-primary-mid);
+}
+
+.ueber-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.ueber-card-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.ueber-card-icon--blue   { background: rgba(42, 92, 139, 0.10); color: var(--rd-primary-mid); }
+.ueber-card-icon--orange { background: rgba(255, 159, 45, 0.12); color: var(--rd-accent-dark); }
+.ueber-card-icon--green  { background: rgba(22, 163, 74, 0.12); color: #16a34a; }
+
+.ueber-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.65rem;
+  color: var(--rd-text);
+}
+
+.ueber-card p {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--rd-text-soft);
+  margin: 0;
+}
+
+.ueber-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ueber-card ul li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  color: var(--rd-text-soft);
+}
+
+.ueber-card ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #16a34a;
+  font-weight: 800;
+}
+
+/* Stats row */
+.ueber-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background: var(--rd-primary);
+  border-radius: var(--rd-radius-lg);
+  padding: 1.75rem 1rem;
+}
+
+.ueber-stats .stat {
+  text-align: center;
+  color: #fff;
+}
+
+.stat-number {
+  display: block;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--rd-accent);
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  body.redesign #ueber-mich { padding: 3rem 1rem !important; }
+  .ueber-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .ueber-stats { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.5rem 1rem; }
+  .ueber-stats .stat { display: flex; align-items: baseline; justify-content: center; gap: 0.5rem; }
+  .stat-number { font-size: 1.5rem; margin: 0; }
+}
+
 /* Contact panel — white card on the blue section, 2-column grid:
    left = info cards + trust signals, right = form. */
 body.redesign #kontakt .contact-content {
