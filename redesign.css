@@ -784,6 +784,37 @@ body.redesign .footer-copyright {
   border-radius: 0;
 }
 
+/* Show the logo on the far left of the footer (legacy CSS hid it).
+   White rounded pill background so the coloured logo reads against
+   the dark blue gradient. */
+body.redesign .footer-logo,
+body.redesign .footer-inner > picture {
+  display: block !important;
+}
+
+body.redesign .footer-inner > picture {
+  flex: 0 0 auto;
+  align-self: center;
+  padding: 0.6rem 0.85rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--rd-radius-md);
+}
+
+body.redesign .footer-logo {
+  height: 64px !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 800px) {
+  body.redesign .footer-inner > picture {
+    align-self: flex-start;
+  }
+  body.redesign .footer-logo {
+    height: 52px !important;
+  }
+}
+
 /* Vertical hairline dividers separating the three footer columns */
 body.redesign .footer-address {
   border-right: 1px solid rgba(255, 255, 255, 0.18);
