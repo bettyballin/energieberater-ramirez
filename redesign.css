@@ -1580,6 +1580,17 @@ a.info-card:focus {
     box-shadow: 0 4px 12px rgba(255, 159, 45, 0.30);
   }
 
+  /* Hamburger / close button stays above the drawer and uses
+     brand-blue so the X is always visible against any background. */
+  body.redesign .hamburger-menu {
+    z-index: 1101;
+    position: relative;
+  }
+  body.redesign .hamburger-line,
+  body.redesign .hamburger-menu.active .hamburger-line {
+    background-color: var(--rd-primary) !important;
+  }
+
   body.redesign #hero.hero-overlay {
     height: clamp(360px, 65vh, 520px);
   }
