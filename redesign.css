@@ -534,7 +534,7 @@ body.redesign #warum {
   left: -14%;                   /* push out of the circle on the left */
   background: #fff;
   padding: 0.85rem 1.4rem 0.85rem 0.85rem;
-  border-radius: 0;
+  border-radius: var(--rd-radius-md);
   box-shadow: 0 16px 40px rgba(31, 74, 107, 0.22);
   display: flex;
   align-items: center;
