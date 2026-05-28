@@ -331,31 +331,79 @@
                 </div>
             </div>
 
-            <div class="kontakt-info-row">
-                <div>
-                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                        <circle cx="12" cy="7" r="4"/>
-                    </svg>
-                    <div>
-                        <div><strong>Jairo Ramirez</strong></div>
-                        <div>Energie-Effizienz-Experte</div>
-                    </div>
-                </div>
-                <div>
-                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                        <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                    <div>
-                        <div>Gundhelmer Str. 57</div>
-                        <div>36381 Schlüchtern</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kontaktformular (bleibt funktional, jetzt auf weißer Karte über blauem Hintergrund) -->
+            <!-- Kontaktformular: zweispaltig — links Info-Karten + Vertrauen, rechts Formular -->
             <div id="kontaktformular" class="contact-content">
+                <aside class="contact-info-side">
+                    <div class="contact-intro">
+                        <h3>Direkt erreichbar</h3>
+                        <p>Rufen Sie mich gerne direkt an oder nutzen Sie das Kontaktformular — Anfragen beantworte ich in der Regel innerhalb von 24 Stunden.</p>
+                    </div>
+
+                    <ul class="contact-info-cards">
+                        <li>
+                            <a href="tel:+491607764812" class="info-card">
+                                <span class="info-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </span>
+                                <span class="info-body">
+                                    <span class="info-label">Telefon</span>
+                                    <span class="info-value">+49 160 7764812</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@energieberater-ramirez.de" class="info-card">
+                                <span class="info-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </span>
+                                <span class="info-body">
+                                    <span class="info-label">E-Mail</span>
+                                    <span class="info-value">info@energieberater-ramirez.de</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="info-card">
+                                <span class="info-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </span>
+                                <span class="info-body">
+                                    <span class="info-label">Adresse</span>
+                                    <span class="info-value">Gundhelmer Str. 57<br>36381 Schlüchtern</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-card">
+                                <span class="info-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="9"/>
+                                        <path d="M12 7v5l3 2"/>
+                                    </svg>
+                                </span>
+                                <span class="info-body">
+                                    <span class="info-label">Erreichbarkeit</span>
+                                    <span class="info-value">Mo–Fr · 08:00–18:00 Uhr</span>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="contact-trust">
+                        <li><span aria-hidden="true">✓</span> BAFA-zertifizierter Energie-Effizienz-Experte</li>
+                        <li><span aria-hidden="true">✓</span> Mitglied im GIH Bundesverband</li>
+                        <li><span aria-hidden="true">✓</span> 30+ Jahre Bauerfahrung</li>
+                    </ul>
+                </aside>
+
                 <div class="contact-form-wrapper">
                     <form id="contactForm" class="modern-form">
                         <div class="form-group">
