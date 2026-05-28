@@ -784,6 +784,34 @@ body.redesign .footer-copyright {
   border-radius: 0;
 }
 
+/* Vertical divider between the address column and the phone column */
+body.redesign .footer-address {
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  padding-right: 2rem;
+}
+
+/* Links column gets its own subtle accent gradient so it visually
+   reads as the "secondary" / utility column. */
+body.redesign .footer-links {
+  background: linear-gradient(135deg, rgba(255, 159, 45, 0.10) 0%, rgba(255, 159, 45, 0.02) 100%);
+  padding: 1rem 1.25rem;
+  border-radius: var(--rd-radius-sm);
+  border-left: 3px solid var(--rd-accent);
+}
+
+@media (max-width: 800px) {
+  body.redesign .footer-address {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+  body.redesign .footer-links {
+    border-left: none;
+    border-top: 3px solid var(--rd-accent);
+  }
+}
+
 /* ============================================================
    Sub-page polish — legal-content lists & links
    Make ul/li in legal-page sections (404, impressum, datenschutz,
