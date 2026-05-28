@@ -703,8 +703,8 @@ body.redesign #kontakt {
   margin-top: 2px;
 }
 
-/* The legacy white contact-form-wrapper inside #kontakt should still
-   read OK on the blue background — wrap it in a white panel. */
+/* Contact panel — white card on the blue section, 2-column grid:
+   left = info cards + trust signals, right = form. */
 body.redesign #kontakt .contact-content {
   margin-top: 3rem;
   background: #fff;
@@ -715,6 +715,140 @@ body.redesign #kontakt .contact-content {
   max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ---------- Contact info side (left column of the form panel) ---------- */
+.contact-info-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-intro h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  color: var(--rd-primary);
+}
+
+.contact-intro p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--rd-text-soft);
+  margin: 0;
+}
+
+.contact-info-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-info-cards li {
+  margin: 0;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 0.85rem;
+  background: var(--rd-surface-soft);
+  border: 1px solid var(--rd-border);
+  border-radius: var(--rd-radius-md);
+  color: var(--rd-text);
+  text-decoration: none;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+
+a.info-card:hover,
+a.info-card:focus {
+  border-color: var(--rd-primary-mid);
+  background: #fff;
+  transform: translateY(-1px);
+  color: var(--rd-text);
+}
+
+.info-icon {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--rd-primary-light);
+  color: var(--rd-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.info-body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+  min-width: 0;
+}
+
+.info-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rd-muted);
+}
+
+.info-value {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--rd-text);
+  word-break: break-word;
+}
+
+.contact-trust {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 1.1rem;
+  background: rgba(31, 74, 107, 0.04);
+  border-left: 3px solid var(--rd-accent);
+  border-radius: var(--rd-radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-trust li {
+  display: flex;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--rd-text);
+}
+
+.contact-trust li span {
+  color: #16a34a;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* Stack on tablet and below */
+@media (max-width: 900px) {
+  body.redesign #kontakt .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.75rem;
+  }
 }
 
 /* ---------- RESPONSIVE ---------- */
