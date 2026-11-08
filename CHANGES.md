@@ -1,4 +1,4 @@
-# Redesign energieberater-ramirez.de — v5 mit finalem Logo (Branch `design-redesign`, 08.11.2026)
+# Redesign energieberater-ramirez.de — v9 – dunkler Header, Foto-Hero nach Vorlage (Branch `design-redesign`, 08.11.2026)
 
 ## Einspielen
 A) `git apply --index redesign.patch` im Repo auf `design-redesign`, committen, pushen.
@@ -22,10 +22,16 @@ Deploy per SFTP ohne `.git`, `.claude`, `.vscode`, `plans`, `*.md`, `*.py`.
 - Alle Seiten: SVG-Logo im Header, dunkle Variante im Footer ohne weiße Kachel, Favicon-Links (`favicon.svg` + `.ico`).
 - CSS: `.logo` 44 px (Scroll 38 px, mobil 36 px), `.footer-logo` 52 px; `white-space: nowrap` für Nav, Telefon, CTA.
 
+## Neu in v9: Header & Hero
+- Header jetzt dunkel (Navy) auf allen Seiten: weißes Logo (`logo-dark.svg`), Telefon als Bernstein-Pill, CTA Bernstein. Drawer und Dropdown dunkel.
+- Hero vollflächig: Hausfoto rechts (`hero-haus-1200/1800.webp` + `hero-haus.jpg`, mit Bernstein-Giebelkontur und A-Label ins Bild komponiert), Verlauf nach Navy links; Serifen-Headline mit Bernstein-Betonung, Pill-CTA + Textlink; untere Zeile mit Skyline-Zeichnung und drei USPs. 50-%-Karte entfällt (steht im Abschnitt Honorar). `hero-illustration.svg` entfällt.
+
+- Empfehlung: ein echtes Foto von Jairo vor Ort (Begehung, Baustelle, Thermografie) ersetzt das Studio-Porträt 1:1 – gleiche Datei, gleicher Rahmen.
+
 ## Aus v1 (unverändert gültig)
 - `styles.css` → `styles.min.css` (34 KB), `build.py`, `/fonts/` (Inter, Source Serif 4, selbst gehostet, OFL).
 - `index.html` neu; Leistungsseiten, Werdegang, Impressum (DDG/MStV), Datenschutz (EmailJS, jsDelivr, lokale Schriften — TODO-Kommentar beachten), Blog (noindex), 404, `script.js`, `sitemap.xml`.
-- Hero-Bilder responsiv (`hero-haus-800/1200/1500.webp`).
+- Hero: Porträt (`ramirez.webp`) statt KI-Haus; `hero-haus-*.webp` entfallen (auch `hero-haus.jpg` kann weg). Alternative: `hero-illustration.svg` (Gebäudeschnitt, Linienzeichnung) – Einbau: `<figure class="hero-portrait">` durch `<img src="hero-illustration.svg" alt="">` ersetzen.
 
 ## Fachlich prüfen (Jairo)
 Förderzahlen 50 % / 650 € / 850 €, iSFP-Bonus-Regel ab 30.000 € (seit 21.07.2026), Aussagen zu Festpreis, 24-h-Antwort, Mo–Fr 08–18 Uhr, Antragstellung, Herstellerneutralität.
