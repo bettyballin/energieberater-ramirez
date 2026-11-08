@@ -1,294 +1,156 @@
-// Form validation for contact form (simple version)
-function validateForm() {
-  let isValid = true;
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const messageInput = document.getElementById('message');
-  
-  // Clear previous error messages
-  document.getElementById('nameError').textContent = '';
-  document.getElementById('nameError').style.display = 'none';
-  document.getElementById('emailError').textContent = '';
-  document.getElementById('emailError').style.display = 'none';
-  document.getElementById('messageError').textContent = '';
-  document.getElementById('messageError').style.display = 'none';
-  
-  // Validate name
-  if (nameInput.value.length < 2) {
-    const lang = getLangFromURL();
-    document.getElementById('nameError').textContent = translations[lang].nameError;
-    document.getElementById('nameError').style.display = 'block';
-    isValid = false;
-  }
-  
-  // Validate email
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (!emailPattern.test(emailInput.value)) {
-    const lang = getLangFromURL();
-    document.getElementById('emailError').textContent = translations[lang].emailError;
-    document.getElementById('emailError').style.display = 'block';
-    isValid = false;
-  }
-  
-  // Validate message
-  if (messageInput.value.length < 10) {
-    const lang = getLangFromURL();
-    document.getElementById('messageError').textContent = translations[lang].messageError;
-    document.getElementById('messageError').style.display = 'block';
-    isValid = false;
-  }
-  
-  return isValid;
-}
 /**
- * Shows the loading icon (e.g., during async operations).
+ * Energieberater Ramirez — script.js
+ * - Mobile-Navigation (Hamburger + Overlay)
+ * - Header verkleinert sich beim Scrollen
+ * - Kontaktformular: Validierung, Einwilligung, Honeypot, Versand via EmailJS
  */
-function startLoading() {
-  const loadingIcon = document.getElementById('loadingIcon');
-  loadingIcon.style.display = 'inline-block'; // Show the loading icon
-}
+(function () {
+  'use strict';
 
-/**
- * Hides the loading icon.
- */
-function stopLoading() {
-  const loadingIcon = document.getElementById('loadingIcon');
-  loadingIcon.style.display = 'none';
-}
+  document.addEventListener('DOMContentLoaded', function () {
+    /* ---------------- Mobile-Navigation ---------------- */
+    var hamburger = document.getElementById('hamburgerMenu');
+    var drawer = document.getElementById('headerContent');
+    var overlay = document.getElementById('mobileOverlay');
 
+    function setMenu(open) {
+      if (!drawer) return;
+      drawer.classList.toggle('active', open);
+      if (hamburger) {
+        hamburger.classList.toggle('active', open);
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        hamburger.setAttribute('aria-label', open ? 'Navigation schließen' : 'Navigation öffnen');
+      }
+      if (overlay) overlay.classList.toggle('active', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
 
-// Modal functionality - Global functions
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.add('show');
-        document.body.classList.add('modal-open');
+    if (hamburger) {
+      hamburger.addEventListener('click', function () {
+        setMenu(!drawer.classList.contains('active'));
+      });
     }
-}
+    if (overlay) overlay.addEventListener('click', function () { setMenu(false); });
 
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.remove('show');
-        document.body.classList.remove('modal-open');
-    }
-}
-
-/**
- * Page interactions
- * - Smooth-scroll to anchor sections (CSS handles the actual scroll behaviour)
- * - Hamburger menu, modal overlays, contact form submission
- * - Logo shrinks when the page scrolls
- */
-document.addEventListener('DOMContentLoaded', function () {
-    const logo = document.querySelector('.logo');
-
-    // Hamburger Menu Functionality
-    const hamburgerMenu = document.getElementById('hamburgerMenu');
-    const headerContent = document.getElementById('headerContent');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    
-    function toggleMobileMenu() {
-        const isActive = headerContent.classList.contains('active');
-        
-        if (isActive) {
-            // Close menu
-            headerContent.classList.remove('active');
-            hamburgerMenu.classList.remove('active');
-            mobileOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        } else {
-            // Open menu
-            headerContent.classList.add('active');
-            hamburgerMenu.classList.add('active');
-            mobileOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-    
-    function closeMobileMenu() {
-        headerContent.classList.remove('active');
-        hamburgerMenu.classList.remove('active');
-        mobileOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    
-    // Hamburger menu click event
-    if (hamburgerMenu) {
-        hamburgerMenu.addEventListener('click', toggleMobileMenu);
-    }
-    
-    // Mobile overlay click event
-    if (mobileOverlay) {
-        mobileOverlay.addEventListener('click', closeMobileMenu);
-    }
-    
-    // Close mobile menu when navigation link is clicked
-    const navLinks = document.querySelectorAll('.header-content a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
-    
-    // Close mobile menu on window resize if screen becomes larger
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            closeMobileMenu();
-        }
+    document.querySelectorAll('.header-content a').forEach(function (link) {
+      link.addEventListener('click', function () { setMenu(false); });
     });
 
-    // Logo: start large, shrink on scroll
-    const header = document.querySelector('header');
-    if (logo) {
-        logo.classList.add('logo-large');
-        if (header) header.classList.remove('header-small');
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 20) {
-                logo.classList.remove('logo-large');
-                if (header) header.classList.add('header-small');
-            } else {
-                logo.classList.add('logo-large');
-                if (header) header.classList.remove('header-small');
-            }
-        });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900) setMenu(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && drawer && drawer.classList.contains('active')) setMenu(false);
+    });
+
+    /* ---------------- Header beim Scrollen ---------------- */
+    var header = document.querySelector('header');
+    if (header) {
+      var onScroll = function () {
+        header.classList.toggle('header-small', window.scrollY > 24);
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
     }
 
-    // Anchor links use native smooth scrolling via the html { scroll-behavior: smooth } CSS rule.
+    /* ---------------- Kontaktformular ---------------- */
+    var form = document.getElementById('contactForm');
+    if (!form) return;
 
-    // EmailJS integration for contact form
-    const form = document.getElementById('contactForm');
-    const statusDiv = document.getElementById('status');
-    let emailTimeout;
+    var statusDiv = document.getElementById('status');
+    var loadingIcon = document.getElementById('loadingIcon');
+    var fields = {
+      name: document.getElementById('name'),
+      email: document.getElementById('email'),
+      message: document.getElementById('message'),
+      consent: document.getElementById('consent'),
+      honeypot: document.getElementById('website')
+    };
+    var errors = {
+      name: document.getElementById('nameError'),
+      email: document.getElementById('emailError'),
+      message: document.getElementById('messageError'),
+      consent: document.getElementById('consentError')
+    };
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-    // Check if EmailJS is properly loaded
-    function isEmailJSLoaded() {
-        return typeof emailjs !== 'undefined' && emailjs.hasOwnProperty('init');
+    function setError(key, text) {
+      var el = errors[key];
+      var field = fields[key];
+      if (el) { el.textContent = text || ''; el.style.display = text ? 'block' : 'none'; }
+      if (field && field.classList) field.classList.toggle('invalid-input', !!text);
+      if (field) field.setAttribute('aria-invalid', text ? 'true' : 'false');
     }
 
-    // Validate contact form fields (stricter than validateForm)
-    function validateContactForm() {
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const messageInput = document.getElementById('message');
-        let isValid = true;
-
-        // Validate name (at least 2 characters)
-        if (!nameInput.value || nameInput.value.trim().length < 2) {
-        isValid = false;
-        nameInput.classList.add('invalid-input');
-        } else {
-        nameInput.classList.remove('invalid-input');
-        }
-
-        // Validate email (using a simple regex pattern)
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailInput.value || !emailPattern.test(emailInput.value)) {
-        isValid = false;
-        emailInput.classList.add('invalid-input');
-        } else {
-        emailInput.classList.remove('invalid-input');
-        }
-
-        // Validate message (at least 10 characters)
-        if (!messageInput.value || messageInput.value.trim().length < 10) {
-        isValid = false;
-        messageInput.classList.add('invalid-input');
-        } else {
-        messageInput.classList.remove('invalid-input');
-        }
-
-        return isValid;
+    function setStatus(text, type) {
+      if (!statusDiv) return;
+      statusDiv.textContent = text || '';
+      statusDiv.className = type ? type + '-message' : '';
     }
 
-    // Add an event listener for form submission
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-        
-        // Clear any previous status
-        statusDiv.textContent = '';
-        statusDiv.className = '';
-        
-        // Validate form
-        if (!validateContactForm()) {
-        statusDiv.textContent = 'Please fill out all fields correctly.';
-        statusDiv.className = 'error-message';
+    function validate() {
+      var ok = true;
+      if (!fields.name || fields.name.value.trim().length < 2) { setError('name', 'Bitte geben Sie Ihren Namen an.'); ok = false; } else setError('name', '');
+      if (!fields.email || !EMAIL_RE.test(fields.email.value.trim())) { setError('email', 'Bitte geben Sie eine gültige E-Mail-Adresse an.'); ok = false; } else setError('email', '');
+      if (!fields.message || fields.message.value.trim().length < 10) { setError('message', 'Bitte beschreiben Sie Ihr Anliegen in mindestens 10 Zeichen.'); ok = false; } else setError('message', '');
+      if (fields.consent && !fields.consent.checked) { setError('consent', 'Bitte bestätigen Sie den Datenschutzhinweis.'); ok = false; } else setError('consent', '');
+      return ok;
+    }
+
+    ['name', 'email', 'message'].forEach(function (key) {
+      if (fields[key]) fields[key].addEventListener('input', function () { if (fields[key].classList.contains('invalid-input')) validate(); });
+    });
+    if (fields.consent) fields.consent.addEventListener('change', function () { if (fields.consent.checked) setError('consent', ''); });
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      setStatus('');
+
+      // Honeypot: Bots füllen das versteckte Feld aus — still verwerfen.
+      if (fields.honeypot && fields.honeypot.value) {
+        form.reset();
+        setStatus('Vielen Dank für Ihre Nachricht.', 'success');
         return;
-        }
-        
-        // Check if EmailJS is loaded
-        if (!isEmailJSLoaded()) {
-        statusDiv.textContent = 'Email service not available. Please try again later or contact directly via email.';
-        statusDiv.className = 'error-message';
+      }
+
+      if (!validate()) {
+        setStatus('Bitte prüfen Sie die markierten Felder.', 'error');
+        var firstInvalid = form.querySelector('.invalid-input, [aria-invalid="true"]');
+        if (firstInvalid && firstInvalid.focus) firstInvalid.focus();
         return;
-        }
-        
-        // Show loading icon with a small delay to ensure it renders properly
-        setTimeout(() => {
-        startLoading();
-        }, 10);
-        
-        // Set a timeout to hide the loading icon if the email sending takes too long
-        emailTimeout = setTimeout(() => {
-        statusDiv.textContent = 'Request is taking longer than expected. Please wait...';
-        // Keep the loading icon visible
-        }, 5000);
-        
-        // Disable form inputs during submission
-        const formInputs = form.querySelectorAll('input, textarea, button');
-        formInputs.forEach(input => input.disabled = true);
-        
-        // Get form data
-        const formData = {
-        from_name: document.getElementById('name').value,
-        from_mail: document.getElementById('email').value,
-        message: document.getElementById('message').value
-        };
-        
-        // Log form data for debugging
-        console.log("Sending email with data:", formData);
-        
-        // Use emailjs.send instead of sendForm to explicitly pass the form data
-        emailjs.send("service_npdni2c", "template_z20cxdh", formData)
-        .then(() => {
-            clearTimeout(emailTimeout);
-            statusDiv.textContent = 'Nachricht erfolgreich versendet!';
-            statusDiv.className = 'success-message';
-            form.reset(); // Clear the form fields
-            stopLoading();
-            
-            // Re-enable form inputs
-            formInputs.forEach(input => input.disabled = false);
-        }, (error) => {
-            clearTimeout(emailTimeout);
-            console.error("EmailJS Error:", error);
-            statusDiv.textContent = 'Fehler beim Senden. Versuchen Sie es erneut oder schreiben Sie mir direkt via Email';
-            statusDiv.className = 'error-message';
-            stopLoading();
-            
-            // Re-enable form inputs
-            formInputs.forEach(input => input.disabled = false);
-        });
+      }
+
+      if (typeof window.emailjs === 'undefined' || typeof window.emailjs.send !== 'function') {
+        setStatus('Der Versand ist gerade nicht verfügbar. Bitte schreiben Sie direkt an info@energieberater-ramirez.de oder rufen Sie an.', 'error');
+        return;
+      }
+
+      var controls = form.querySelectorAll('input, textarea, button');
+      controls.forEach(function (c) { c.disabled = true; });
+      if (loadingIcon) loadingIcon.style.display = 'inline-block';
+
+      var slowTimer = setTimeout(function () {
+        setStatus('Der Versand dauert etwas länger als üblich – bitte einen Moment Geduld.');
+      }, 6000);
+
+      var payload = {
+        from_name: fields.name.value.trim(),
+        from_mail: fields.email.value.trim(),
+        message: fields.message.value.trim()
+      };
+
+      window.emailjs.send('service_npdni2c', 'template_z20cxdh', payload).then(function () {
+        clearTimeout(slowTimer);
+        form.reset();
+        setStatus('Vielen Dank – Ihre Anfrage ist eingegangen. Ich melde mich in der Regel innerhalb von 24 Stunden.', 'success');
+      }, function () {
+        clearTimeout(slowTimer);
+        setStatus('Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an info@energieberater-ramirez.de.', 'error');
+      }).then(function () {
+        if (loadingIcon) loadingIcon.style.display = 'none';
+        controls.forEach(function (c) { c.disabled = false; });
+      });
     });
-    
-    // Initialize modal event listeners
-    const modals = document.querySelectorAll('.modal-overlay');
-    
-    modals.forEach(modal => {
-        // Click outside to close
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                closeModal(modal.id);
-            }
-        });
-    });
-    
-    // Escape key to close any open modal
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            modals.forEach(modal => {
-                if (modal.classList.contains('show')) {
-                    closeModal(modal.id);
-                }
-            });
-        }
-    });
-});
+  });
+})();
