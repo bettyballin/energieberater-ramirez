@@ -73,6 +73,7 @@ html {
   scroll-behavior: smooth;
   overscroll-behavior-y: none;
   overflow-x: hidden;        /* Off-Canvas-Drawer darf keinen horizontalen Scroll erzeugen */
+  overflow-x: clip;          /* moderne Browser: clip erzeugt keinen Scroll-Container (sicherer für sticky/Anker in Safari) */
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -284,7 +285,7 @@ header.header-small .logo { height: 38px; }
 .hamburger-menu.active .hamburger-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .mobile-overlay {
-  position: fixed; inset: 0; z-index: 1100;
+  position: fixed; inset: 0; z-index: 1100;  /* liegt im Header, also im selben Stacking-Context wie der Drawer (1200) */
   background: rgba(14, 34, 53, 0.55);
   opacity: 0; visibility: hidden; transition: opacity 0.25s var(--ease), visibility 0s linear 0.25s;
 }

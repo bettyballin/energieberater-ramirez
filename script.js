@@ -33,7 +33,23 @@
     if (overlay) overlay.addEventListener('click', function () { setMenu(false); });
 
     document.querySelectorAll('.header-content a').forEach(function (link) {
-      link.addEventListener('click', function () { setMenu(false); });
+      link.addEventListener('click', function (e) {
+        var wasOpen = drawer && drawer.classList.contains('active');
+        setMenu(false);
+        // Anker auf derselben Seite: nach dem Schließen explizit scrollen (iOS verschluckt sonst gelegentlich den Sprung)
+        var href = link.getAttribute('href') || '';
+        var hashIndex = href.indexOf('#');
+        if (wasOpen && hashIndex !== -1) {
+          var path = href.slice(0, hashIndex);
+          var samePage = path === '' || path === location.pathname.split('/').pop() || (path === 'index.html' && /\/(index\.html)?$/.test(location.pathname));
+          var target = samePage ? document.getElementById(href.slice(hashIndex + 1)) : null;
+          if (target) {
+            e.preventDefault();
+            if (history.pushState) history.pushState(null, '', href.slice(hashIndex));
+            setTimeout(function () { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 30);
+          }
+        }
+      });
     });
 
     window.addEventListener('resize', function () {
