@@ -725,6 +725,7 @@ a.svc-name:hover { text-decoration: underline; text-underline-offset: 3px; }
 .vita-skill-card li em { font-style: normal; font-weight: 600; color: var(--text); }
 
 .vita-docs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.9rem; }
+.vita-docs-subheading { font-family: var(--font-serif); font-size: 1.35rem; color: var(--ink); margin: 2.5rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 .vita-doc {
   position: relative; display: grid; gap: 0.2rem; padding: 1rem 1rem 1rem 3rem;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); color: var(--text); text-decoration: none;

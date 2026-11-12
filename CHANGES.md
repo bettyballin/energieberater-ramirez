@@ -1,4 +1,4 @@
-# Redesign energieberater-ramirez.de — v9 – dunkler Header, Foto-Hero nach Vorlage (Branch `design-redesign`, 08.11.2026)
+# Redesign energieberater-ramirez.de — v12 – inkl. Zertifikate-Update 12.11.2026 (Branch `design-redesign`, 08.11.2026)
 
 ## Einspielen
 A) `git apply --index redesign.patch` im Repo auf `design-redesign`, committen, pushen.
@@ -35,3 +35,16 @@ Deploy per SFTP ohne `.git`, `.claude`, `.vscode`, `plans`, `*.md`, `*.py`.
 
 ## Fachlich prüfen (Jairo)
 Förderzahlen 50 % / 650 € / 850 €, iSFP-Bonus-Regel ab 30.000 € (seit 21.07.2026), Aussagen zu Festpreis, 24-h-Antwort, Mo–Fr 08–18 Uhr, Antragstellung, Herstellerneutralität.
+
+## Fix in v10
+- Mobilmenü: Das Overlay (z-index 1100) lag über dem Drawer, der im Stacking-Context des Headers (z-index 1000) sitzt – Tipps auf Menüpunkte trafen das Overlay und schlossen nur das Menü. Overlay jetzt z-index 900. Nur `styles.css`/`styles.min.css` geändert.
+
+## Fix in v11 (Mobilmenü, alle Seiten)
+- Overlay liegt jetzt *im* Header (gleicher Stacking-Context wie der Drawer) – unabhängig von z-index-Reihenfolgen.
+- script.js: Anker-Links im Drawer schließen das Menü und scrollen explizit per scrollIntoView (iOS-sicher), Hash wird gesetzt.
+- Cache-Busting: `styles.min.css?v=20261108b` und `script.js?v=20261108b` in allen Seiten – alte Caches auf dem Handy ziehen nicht mehr.
+- `html { overflow-x: clip }` als modernes Fallback zu `hidden`.
+
+## v12 (12.11.2026)
+- Hero-Bilder ohne A-Label (nur Bernstein-Linie).
+- Werdegang: Teilnahmebescheinigung „Hygrothermische Bauphysik – Lehrgang“ (euz/Fraunhofer IBP) nach dem WUFI-Eintrag; neue Gruppe „Technische Gebäudeausrüstung (TGA)“ mit drei Oventrop-Bescheinigungen. Kennzahl auf der Startseite 15 → 19.
